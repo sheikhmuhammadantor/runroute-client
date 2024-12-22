@@ -4,8 +4,10 @@ import UpcomingMarathons from "./Components/Home/UpcomingMarathons";
 import MainLayout from "./Layout/MainLayout";
 import Login from "./Pages/Auth/Login";
 import Register from "./Pages/Auth/Register";
+import ErrorPage from "./Pages/ErrorPage";
 import Home from "./Pages/Home";
 
 
 
-export { MainLayout, Home, Marathons, Banner, UpcomingMarathons, Login, Register };
+
+export { MainLayout, Home, Marathons, Banner, UpcomingMarathons, Login, Register, ErrorPage };
