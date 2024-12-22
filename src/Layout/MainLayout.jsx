@@ -14,7 +14,7 @@ function MainLayout() {
                 <Outlet />
             </section>
             <section className="bg-base-200 text-base-content">
-            <Footer />
+                <Footer />
             </section>
         </>
     )
