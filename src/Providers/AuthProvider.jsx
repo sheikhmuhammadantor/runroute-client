@@ -34,14 +34,13 @@ function AuthProvider({ children }) {
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            if (currentUser.email) {
+            if (currentUser) {
                 setUser(currentUser)
             }
             else {
                 setUser(null)
             }
             setLoading(false)
-            console.log('User', currentUser);
         })
 
         return () => {
