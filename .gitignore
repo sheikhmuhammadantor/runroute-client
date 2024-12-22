@@ -15,6 +15,7 @@ dist-ssr
 Demo
 .env
 test.*
+note.*
 
 # Editor directories and files
 .vscode/*
