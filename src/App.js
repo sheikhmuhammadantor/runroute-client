@@ -1,6 +1,7 @@
 import Banner from "./Components/Home/Banner";
 import Marathons from "./Components/Home/Marathons";
 import UpcomingMarathons from "./Components/Home/UpcomingMarathons";
+import useAxios from "./Hook/useAxios";
 import MainLayout from "./Layout/MainLayout";
 import Login from "./Pages/Auth/Login";
 import Register from "./Pages/Auth/Register";
@@ -12,4 +13,5 @@ import AddMarathon from "./Pages/Private/AddMarathon";
 
 
 
-export { MainLayout, Home, Marathons, Banner, UpcomingMarathons, Login, Register, ErrorPage, AddMarathon };
+
+export { MainLayout, Home, Marathons, Banner, UpcomingMarathons, Login, Register, ErrorPage, AddMarathon, useAxios };

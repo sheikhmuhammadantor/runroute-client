@@ -3,10 +3,10 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { useAxios } from '../../App';
 
 function AddMarathon() {
 
-    // const user = {};
     const [title, setTitle] = useState("");
     const [registrationStartDate, setRegistrationStartDate] = useState(null);
     const [registrationEndDate, setRegistrationEndDate] = useState(null);
@@ -15,6 +15,7 @@ function AddMarathon() {
     const [runningDistance, setRunningDistance] = useState("");
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
+    const axiosInstance = useAxios();
 
     const handelAddMarathon = (e) => {
         e.preventDefault();
@@ -31,7 +32,11 @@ function AddMarathon() {
             createdAt: new Date(),
             totalRegistrations: 0,
         };
-        console.log("Marathon Created:", newMarathon);
+        // console.log("Marathon Created:", newMarathon);
+        axiosInstance.post(`/addMarathon`, newMarathon)
+            .then((data) => {
+                console.log(data.data);
+            })
     }
 
     return (
