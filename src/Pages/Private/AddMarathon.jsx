@@ -1,13 +1,37 @@
-import React from 'react'
-import { FaArrowLeft } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 function AddMarathon() {
 
-    const user = {};
+    // const user = {};
+    const [title, setTitle] = useState("");
+    const [registrationStartDate, setRegistrationStartDate] = useState(null);
+    const [registrationEndDate, setRegistrationEndDate] = useState(null);
+    const [marathonStartDate, setMarathonStartDate] = useState(null);
+    const [location, setLocation] = useState("");
+    const [runningDistance, setRunningDistance] = useState("");
+    const [description, setDescription] = useState("");
+    const [image, setImage] = useState("");
 
-    const handelAddCampaign = (e) => {
+    const handelAddMarathon = (e) => {
         e.preventDefault();
+
+        const newMarathon = {
+            title,
+            registrationStartDate,
+            registrationEndDate,
+            marathonStartDate,
+            location,
+            runningDistance,
+            description,
+            image,
+            createdAt: new Date(),
+            totalRegistrations: 0,
+        };
+        console.log("Marathon Created:", newMarathon);
     }
 
     return (
@@ -19,91 +43,127 @@ function AddMarathon() {
                 <div className="bg-base-200 w-full shadow-2xl border rounded-2xl py-6">
                     <div className="text-center px-4">
                         <h2 className="text-3xl font-semibold mb-3">Add New Marathon</h2>
-                        <p className="">Bring your idea to life! Share your vision, set goals, and inspire others to support you. <br /> Fill in the form below to begin your journey toward making a difference.</p>
+                        <p className="">You can add details like the event name, date, location, distances, participant limits, fees, and route maps. <br /> This tool streamlines event setup, making it easy to promote and manage registrations.</p>
                     </div>
-                    {/* From Start Her - */}
-                    <form onSubmit={handelAddCampaign} className="card-body ">
-                        {/* Campaign Title */}
+                    {/* From Start Here - */}
+                    <form onSubmit={handelAddMarathon} className="card-body ">
+                        {/* Marathon Title */}
                         <div className="md:flex justify-between gap-6">
                             <div className="form-control w-full">
                                 <label className="label">
-                                    <span className="label-text">Title</span>
+                                    <span className="label-text">Marathon Title</span>
                                 </label>
-                                <input type="text" name="title" placeholder="Campaign Title" className="input input-bordered" required />
+                                <input
+                                    type="text"
+                                    value={title}
+                                    onChange={(e) => setTitle(e.target.value)}
+                                    placeholder="Campaign Title"
+                                    className="input input-bordered"
+                                    required />
                             </div>
-                            {/* Campaign type */}
-                            <div className="w-full grid grid-cols-4 justify-evenly items-end">
-                                <h1 className="col-span-4 md:mt-0 mt-2">Campaign type</h1>
-                                <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2 col-span-2 sm:col-span-1">
-                                    <span className="label-text">Personal</span>
-                                    <input type="radio" name="type" value="Personal" className="radio radio-warning" />
+                            {/* Marathon Start Date */}
+                            <div className="form-control w-full">
+                                <label className="label">
+                                    <span className="label-text">Marathon Start Date</span>
                                 </label>
-                                <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2 col-span-2 sm:col-span-1">
-                                    <span className="label-text">Startup</span>
-                                    <input type="radio" name="type" value="Startup" className="radio radio-warning" />
-                                </label>
-                                <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2 col-span-2 sm:col-span-1">
-                                    <span className="label-text">Business</span>
-                                    <input type="radio" name="type" value="Business" className="radio radio-warning" />
-                                </label>
-                                <label className="label justify-center gap-2 lg:col-span-1 md:col-span-2 col-span-2 sm:col-span-1">
-                                    <span className="label-text">Ideas</span>
-                                    <input type="radio" name="type" value="Ideas" className="radio radio-warning" />
-                                </label>
+                                <DatePicker
+                                    selected={marathonStartDate}
+                                    onChange={(date) => setMarathonStartDate(date)}
+                                    className="input input-bordered w-full"
+                                    dateFormat="yyyy-MM-dd"
+                                    required
+                                />
                             </div>
                         </div>
-                        {/* Category */}
+                        {/* Start Registration Date */}
                         <div className="md:flex justify-between gap-6">
                             <div className="form-control w-full">
                                 <label className="label">
-                                    <span className="label-text">Deadline </span>
+                                    <span className="label-text">Start Registration Date </span>
                                 </label>
-                                <input type="text" name="photo" placeholder="Photo Url" className="input input-bordered" required />
+                                <DatePicker
+                                    selected={registrationStartDate}
+                                    onChange={(date) => setRegistrationStartDate(date)}
+                                    className="input input-bordered w-full"
+                                    dateFormat="yyyy-MM-dd"
+                                    required
+                                />
                             </div>
-                            {/* Minimum Donation Amount */}
+                            {/* End Registration Date */}
                             <div className="form-control w-full">
                                 <label className="label">
-                                    <span className="label-text">Amount</span>
+                                    <span className="label-text">End Registration Date</span>
                                 </label>
-                                <input type="number" name="amount" placeholder="Minimum donation amount" className="input input-bordered" required />
+                                <DatePicker
+                                    selected={registrationEndDate}
+                                    onChange={(date) => setRegistrationEndDate(date)}
+                                    className="input input-bordered w-full"
+                                    dateFormat="yyyy-MM-dd"
+                                />
                             </div>
                         </div>
-                        {/* Photo URL */}
+                        {/* Marathon Image (URL) */}
                         <div className="md:flex justify-between gap-6">
                             <div className="form-control w-full">
                                 <label className="label">
-                                    <span className="label-text">Photo</span>
+                                    <span className="label-text">Marathon Image (URL)</span>
                                 </label>
-                                <input type="text" name="photo" placeholder="Photo Url" className="input input-bordered" required />
+                                <input
+                                    type="text"
+                                    value={image}
+                                    onChange={(e) => setImage(e.target.value)}
+                                    className="input input-bordered"
+                                />
                             </div>
                         </div>
-                        {/* Description */}
+                        {/* Marathon Description */}
                         <div className="md:flex justify-between gap-6">
                             <div className="form-control w-full">
                                 <label className="label">
-                                    <span className="label-text">Description</span>
+                                    <span className="label-text">Marathon Description</span>
                                 </label>
-                                <input type="text" name="description" placeholder="Description" className="input input-bordered" required />
+                                <textarea
+                                    value={description}
+                                    onChange={(e) => setDescription(e.target.value)}
+                                    className="input input-bordered h-auto resize-none"
+                                    rows="4"
+                                    required
+                                ></textarea>
                             </div>
                         </div>
-                        {/* Email & User Name - (Read Only/ you can not edit this field) */}
+                        {/* Marathon Location */}
                         <div className="md:flex justify-between gap-6">
                             <div className="form-control w-full">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span className="label-text">Location</span>
                                 </label>
-                                <input type="email" name="email" placeholder="Email" defaultValue={user?.email} readOnly className="input input-bordered" required />
+                                <input
+                                    type="text"
+                                    value={location}
+                                    onChange={(e) => setLocation(e.target.value)}
+                                    className="input input-bordered"
+                                    placeholder='location'
+                                    required
+                                />
                             </div>
+                            {/* Running Distance */}
                             <div className="form-control w-full">
                                 <label className="label">
-                                    <span className="label-text">Name</span>
+                                    <span className="label-text">Running Distance</span>
                                 </label>
-                                <input type="text" name="name" placeholder="Name" defaultValue={user?.displayName} readOnly className="input input-bordered" required />
+                                <select
+                                    value={runningDistance}
+                                    onChange={(e) => setRunningDistance(e.target.value)}
+                                    className="input input-bordered">
+                                    <option value="3k">3k</option>
+                                    <option value="10k">10k</option>
+                                    <option value="25k">25k</option>
+                                </select>
                             </div>
                         </div>
                         {/* Add Button */}
                         <div className="mt-8 mx-8 text-center">
-                            <button className="btn btn-accent text-lg text-white outline-2 outline outline-black outline-offset-0 w-full">Add Marathon</button>
+                            <button className="btn bg-teal-500 text-lg text-white outline-2 outline outline-black outline-offset-0 w-full">Add Marathon</button>
                         </div>
                     </form>
                 </div>
