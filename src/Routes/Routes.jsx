@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { AddMarathon, AllMarathons, Dashboard, ErrorPage, Home, Login, MainLayout, MarathonDetails, MyApplyList, MyMarathonsList, PrivateRoutes, Register } from "../App";
+import { AddMarathon, AllMarathons, Dashboard, ErrorPage, Home, Login, MainLayout, MarathonDetails, MyApplyList, MyMarathonsList, PrivateRoutes, Register, Registration } from "../App";
 
 export const routes = createBrowserRouter([
     {
@@ -36,6 +36,10 @@ export const routes = createBrowserRouter([
             {
                 path: "/marathons/:id",
                 element: <PrivateRoutes><MarathonDetails /></PrivateRoutes>,
+            },
+            {
+                path: "/registration/:id",
+                element: <PrivateRoutes><Registration /></PrivateRoutes>,
             },
             {
                 path: "/login",

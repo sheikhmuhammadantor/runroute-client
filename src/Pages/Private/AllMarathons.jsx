@@ -21,7 +21,7 @@ function AllMarathons() {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 place-items-center">
         {
-          marathons.map((marathon, idx) => {
+          marathons?.map((marathon, idx) => {
             return <DataCard key={idx} marathon={marathon} setMarathons={setMarathons} idx={idx} />
           })
         }
