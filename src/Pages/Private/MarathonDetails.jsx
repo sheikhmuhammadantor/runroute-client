@@ -8,7 +8,7 @@ function MarathonDetails() {
   const [marathon, setMarathon] = useState({});
   const axiosInstance = useAxios();
   // Destructuring all data from the marathon object
-  console.log(marathon);
+  // console.log(marathon);
   const { _id, title, registrationStartDate, registrationEndDate, marathonStartDate, location, runningDistance, description, image, createdAt, totalRegistrations } = marathon || {};
 
   function formatDate(dateStr) {
@@ -44,7 +44,7 @@ function MarathonDetails() {
             <p className="badge bg-black border-transparent text-white p-3 ml-2">{totalRegistrations}</p>
           </div>
           <div className="card-actions justify-center mt-4">
-            <Link to="/registration/:id" className="btn btn-sm btn-accent text-lg px-8 disabled:btn-info disabled:opacity-60 disabled:cursor-none">Register</Link>
+            <Link to={`/registration/${_id}`} className="btn btn-sm btn-accent text-lg px-8 disabled:btn-info disabled:opacity-60 disabled:cursor-none">Register</Link>
           </div>
         </div>
       </div>
