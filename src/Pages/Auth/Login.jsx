@@ -2,7 +2,7 @@ import { useRef, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
-import useAuth from '../../Hook/useAuth';
+import {useAuth} from '../../App';
 
 function Login() {
 

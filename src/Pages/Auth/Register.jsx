@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 // import { auth } from '../Firebase/firebase';
 import { auth } from '../../Firebase/firebase';
-import useAuth from '../../Hook//useAuth';
+import { useAuth } from '../../App';
 
 function Register() {
 
