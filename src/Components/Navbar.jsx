@@ -37,11 +37,11 @@ function Navbar() {
             user ?
               <div className="relative group">
                 <label htmlFor="my-drawer-4" className="drawer-button btn px-1 outline-cyan-500 outline-2 outline outline-offset-1 border-none hover:outline-cyan-400 w-12 h-12 rounded-full overflow-hidden">
-                  <img className="max-w-full max-h-full" src={0} alt="" />
+                  <img className="max-w-full max-h-full" src={user?.photoURL} alt="" />
                 </label>
                 <div className="absolute top-12 right-0 bg-white shadow-lg border rounded w-60 p-2 hidden group-hover:block z-20">
                   <ul>
-                    <li className="py-1 px-2 hover:bg-gray-200 cursor-pointer font-semibold">{'user?.displayName'}</li>
+                    <li className="py-1 px-2 hover:bg-gray-200 cursor-pointer font-semibold">{user?.displayName}</li>
                     <br />
                     <Link onClick={handelSignOut} className="btn text-lg w-full">Log Out</Link>
                   </ul>

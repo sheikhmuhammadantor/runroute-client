@@ -3,10 +3,11 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { useAxios } from '../../App';
+import { useAuth, useAxios } from '../../App';
 
 function AddMarathon() {
 
+    const { user: { email } = {} } = useAuth();
     const [title, setTitle] = useState("");
     const [registrationStartDate, setRegistrationStartDate] = useState(null);
     const [registrationEndDate, setRegistrationEndDate] = useState(null);
@@ -30,6 +31,7 @@ function AddMarathon() {
             description,
             image,
             createdAt: new Date(),
+            creatorEmail: email,
             totalRegistrations: 0,
         };
         // console.log("Marathon Created:", newMarathon);

@@ -10,7 +10,6 @@ function Registration() {
     const [marathon, setMarathon] = useState({});
     const axiosInstance = useAxios();
     const { user: { email } = {} } = useAuth();
-    const user = {};
 
     useEffect(() => {
         axiosInstance.get(`/marathons/${id}`)
@@ -44,6 +43,11 @@ function Registration() {
         axiosInstance.post(`/registration/:${_id}`, newRegistration)
             .then((data) => {
                 console.log(data.data);
+                // axiosInstance.put(`/registrationsIncrement/:${_id}`)
+                //     .then((data) => {
+                //         console.log(data.data);
+                //     })
+                //     .catch(err => console.log(err))
             })
     }
 
@@ -87,7 +91,7 @@ function Registration() {
                                 <label className="label">
                                     <span className="label-text">First Name</span>
                                 </label>
-                                <input type="email" name="firstName" placeholder="First Name" className="input input-bordered" required />
+                                <input type="text" name="firstName" placeholder="First Name" className="input input-bordered" required />
                             </div>
                             <div className="form-control w-full">
                                 <label className="label">
