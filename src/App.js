@@ -18,5 +18,7 @@ import PrivateRoutes from "./Routes/PrivateRoutes";
 import DataCard from "./Components/CardComponents/DataCard";
 import Registration from "./Pages/MyPrivate/Registration";
 import TableData from "./Components/CardComponents/TableData";
+import UserFeedback from "./Components/Home/UserFeedback";
+import PhotoGallery from "./Components/Home/PhotoGallery";
 
-export { MainLayout, Home, Marathons, Banner, UpcomingMarathons, useAuth , Login, Register, ErrorPage,Dashboard , AddMarathon, useAxios, AllMarathons, MarathonDetails, MyMarathonsList, MyApplyList, PrivateRoutes, DataCard, Registration,TableData };
+export { MainLayout, Home, Marathons, Banner, UpcomingMarathons, useAuth , Login, Register, ErrorPage,Dashboard , AddMarathon, useAxios, AllMarathons, MarathonDetails, MyMarathonsList, MyApplyList, PrivateRoutes, DataCard, Registration,TableData, UserFeedback, PhotoGallery };
