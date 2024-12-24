@@ -10,7 +10,7 @@ function MainLayout() {
             <section className="mt-2">
                 <Navbar />
             </section>
-            <section className="container mx-auto px-5 mt-8 min-h-[65vh]">
+            <section className="px-5 mt-8 min-h-[65vh]">
                 <Outlet />
             </section>
             <section className="bg-base-200 text-base-content">

@@ -3,8 +3,8 @@ import { Banner, Marathons, UpcomingMarathons } from '../App'
 function Home() {
     return (
         <>
-            <Banner />
-            <Marathons />
+            {/* <Banner /> */}
+            {/* <Marathons /> */}
             <UpcomingMarathons />
         </>
     )
