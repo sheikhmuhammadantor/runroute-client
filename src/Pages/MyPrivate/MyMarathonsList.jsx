@@ -13,6 +13,10 @@ function MyMarathonsList() {
       .catch(err => console.log(err))
   }, [])
 
+  const handelDeleteMarathon = (id) => {
+    return axiosInstance.delete(`/deleteMarathon/${id}`)
+  }
+
   return (
     <div className="overflow-x-auto mt-8">
       <table className="table w-full">
@@ -28,7 +32,7 @@ function MyMarathonsList() {
         </thead>
         <tbody>
           {
-            marathons?.map((marathon, idx) => <TableData key={idx} marathon={marathon} idx={idx} setMarathons={setMarathons}  />)
+            marathons?.map((marathon, idx) => <TableData key={idx} marathon={marathon} idx={idx} setMarathons={setMarathons} handelDelete={handelDeleteMarathon} />)
           }
         </tbody>
       </table>
