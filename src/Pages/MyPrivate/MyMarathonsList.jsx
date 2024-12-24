@@ -28,7 +28,7 @@ function MyMarathonsList() {
         </thead>
         <tbody>
           {
-            marathons?.map((marathon, idx) => <TableData key={idx} marathon={marathon} idx={idx} marathons={marathons} setMarathons={setMarathons} />)
+            marathons?.map((marathon, idx) => <TableData key={idx} marathon={marathon} idx={idx} setMarathons={setMarathons}  />)
           }
         </tbody>
       </table>

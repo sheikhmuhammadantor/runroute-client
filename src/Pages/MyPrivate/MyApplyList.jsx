@@ -13,6 +13,10 @@ function MyApplyList() {
       .catch(err => console.log(err))
   }, [])
 
+  const handelDeleteApply = (id) => {
+    return axiosInstance.delete(`/deleteApply/${id}`)
+  }
+
   return (
     <div className="overflow-x-auto mt-8">
       <table className="table w-full">
@@ -27,7 +31,7 @@ function MyApplyList() {
         </thead>
         <tbody>
           {
-            applies?.map((marathon, idx) => <TableData key={idx} marathon={marathon} idx={idx} marathons={applies} setMarathons={setApplies} applies={true} />)
+            applies?.map((marathon, idx) => <TableData key={idx} marathon={marathon} idx={idx} setMarathons={setApplies} handelDelete={handelDeleteApply} applies={true} />)
           }
         </tbody>
       </table>

@@ -1,10 +1,17 @@
 import { ImCross } from "react-icons/im";
 import { MdEdit } from "react-icons/md";
 
-function TableData({ marathon, setMarathons, idx, applies = false }) {
+function TableData({ marathon, setMarathons, idx, handelDelete, applies = false }) {
 
-    const { title, marathonStartDate, location, runningDistance } = marathon;
-    console.log(idx);
+    const { _id, title, marathonStartDate, location, runningDistance } = marathon;
+
+    const handelDeleteData = (id) => {
+        handelDelete(id)
+            .then(() => {
+                setMarathons((prev) => prev.filter((item, index) => index !== idx))
+            })
+            .catch(err => console.log(err))
+    }
 
     return (
         <tr className="border-l-black border-l-2 text-center">
@@ -22,7 +29,7 @@ function TableData({ marathon, setMarathons, idx, applies = false }) {
             }
             <td className="space-x-2 space-y-2 text-center border border-r-black border-r-2">
                 <button className="p-2 border rounded-full hover:border-transparent hover:text-white duration-150 hover:bg-teal-400"><MdEdit /></button>
-                <button className="p-2 border rounded-full hover:border-transparent hover:text-white duration-150 hover:bg-[#f70000]"><ImCross /></button>
+                <button onClick={() => handelDeleteData(_id)} className="p-2 border rounded-full hover:border-transparent hover:text-white duration-150 hover:bg-[#f70000]"><ImCross /></button>
             </td>
         </tr>
     )
