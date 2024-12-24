@@ -29,7 +29,7 @@ function Navbar() {
           {/* <li><NavLink to="/">Home</NavLink></li> */}
           <li><NavLink to="/marathons" className="text-lg font-medium underline">Marathons</NavLink></li>
           {
-            user ? <li><NavLink to="/dashboard" className="text-lg font-medium underline">Dashboard</NavLink></li> : ''
+            user ? <li><NavLink to="/dashboard/addMarathon" className="text-lg font-medium underline">Dashboard</NavLink></li> : ''
           }
         </ul>
         <div>

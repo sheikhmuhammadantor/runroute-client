@@ -16,7 +16,7 @@ export const routes = createBrowserRouter([
                 element: <PrivateRoutes><Dashboard /></PrivateRoutes>,
                 children: [
                     {
-                        path: "addMarathon",
+                        path: "/dashboard/addMarathon",
                         element: <PrivateRoutes><AddMarathon /></PrivateRoutes>,
                     },
                     {
