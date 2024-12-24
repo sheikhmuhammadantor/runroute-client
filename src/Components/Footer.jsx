@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom'
 import logo from '../assets/footerLogo.png'
 
 function Footer() {
   return (
-    <>
-      <footer className="footer bg-base-200 text-base-content p-10">
+    <section className='bg-base-200 text-base-content '>
+      <footer className="footer p-10 max-w-[1380px] mx-auto">
         <aside>
           <img className='max-h-20 border border-dashed border-black rounded-md' src={logo} alt="" />
           <p className="max-w-xs">
@@ -11,17 +12,17 @@ function Footer() {
           </p>
         </aside>
         <nav className='mx-auto'>
-          <h6 className="footer-title">INVESTOR RESOURCES</h6>
-          <a className="link link-hover">CRE Education</a>
-          <a className="link link-hover">CRE Market Outlook</a>
-          <a className="link link-hover">New Investor Orientation</a>
-          <a className="link link-hover">Help Center</a>
+          <h6 className="footer-title">LEARN MORE</h6>
+          <Link className="link link-hover">Pricing</Link>
+          <Link className="link link-hover">How it works</Link>
+          <Link className="link link-hover">APIs</Link>
+          <Link className="link link-hover">Support</Link>
         </nav>
         <nav className='mx-auto'>
-          <h6 className="footer-title">FOR SPONSORS</h6>
-          <a className="link link-hover">Raise Capital</a>
-          <a className="link link-hover">Is Your Deal Right For</a>
-          <a className="link link-hover">Raise Capital</a>
+          <h6 className="footer-title">About</h6>
+          <Link className="link link-hover">FAQs</Link>
+          <Link className="link link-hover">About us</Link>
+          <Link className="link link-hover">Contact us</Link>
         </nav>
       </footer>
       <section className="footer footer-center bg-base-300 text-base-content p-4">
@@ -29,7 +30,7 @@ function Footer() {
           <p>Copyright © {new Date().getFullYear()} - All right reserved by RunRoute</p>
         </aside>
       </section>
-    </>
+    </section>
   )
 }
 

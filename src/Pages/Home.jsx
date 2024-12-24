@@ -3,16 +3,11 @@ import { Banner, Marathons, PhotoGallery, UpcomingMarathons, UserFeedback } from
 function Home() {
     return (
         <>
-            {/* <Banner /> */}
-            {/* <Marathons /> */}
-            <br />
-            <br />
-            <br />
-            <br />
+            <Banner />
+            <Marathons />
             <UserFeedback />
             <PhotoGallery />
-            {/* <UpcomingMarathons /> */}
-            {/* Program And Service */}
+            <UpcomingMarathons />
         </>
     )
 }

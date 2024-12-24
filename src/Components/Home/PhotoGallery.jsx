@@ -1,6 +1,6 @@
 function PhotoGallery() {
   return (
-    <div className="max-w-[1320px] mx-auto mt-16">
+    <div className="max-w-[1380px] mx-auto mt-16">
       <h5 className="text-lime-500 font-semibold text-center">AMAZING PHOTOSTATING</h5>
       <h2 className="text-5xl font-semibold text-center mt-2 mb-8">The Latest Photos_</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-10 place-items-center">

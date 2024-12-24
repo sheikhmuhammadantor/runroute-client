@@ -5,7 +5,6 @@ function Marathons() {
 
   const axiosInstance = useAxios()
   const [marathons, setMarathons] = useState([])
-  // console.log(marathons);
 
   useEffect(() => {
     axiosInstance.get('/marathons?isRunning=true')
@@ -15,7 +14,7 @@ function Marathons() {
   }, [])
 
   return (
-    <div className="m-8 mt-20">
+    <div className="m-8 mt-20 max-w-[1380px] mx-auto">
       <h1 className="text-5xl font-semibold text-center mb-16">
         Running Marathon's
       </h1>
