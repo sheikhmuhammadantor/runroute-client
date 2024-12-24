@@ -8,9 +8,9 @@ import { Autoplay, Pagination } from 'swiper/modules';
 
 const Banner = () => {
   return (
-    <div className="mt-24">
+    <div>
       <h1 className="text-5xl font-semibold text-center">
-        Welcome to FundFusion !
+        Welcome to RunRoute !
       </h1>
       <Swiper className="my-8" spaceBetween={30} slidesPerView={1} centeredSlides={true}
         autoplay={{

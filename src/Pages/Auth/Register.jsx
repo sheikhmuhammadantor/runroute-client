@@ -79,7 +79,7 @@ function Register() {
   }
 
   return (
-    <div className="hero bg-base-200">
+    <div className="hero bg-base-200 my-8">
       <div className="hero-content flex-col my-5">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold my-5">Register now!</h1>

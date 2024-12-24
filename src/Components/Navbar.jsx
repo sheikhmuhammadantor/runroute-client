@@ -1,10 +1,14 @@
 import logo from '../assets/logo.png';
 import { NavLink, Link } from 'react-router-dom';
 import { useAuth } from '../App';
+import { useEffect, useState } from 'react';
+import { RiSunLine } from 'react-icons/ri'
+import { IoIosMoon } from 'react-icons/io'
 
 function Navbar() {
 
   const { user, signOutUser } = useAuth()
+  const [theme, setTheme] = useState("dark");
 
   const handelSignOut = () => {
     signOutUser()
@@ -16,14 +20,32 @@ function Navbar() {
       })
   }
 
+  useEffect(() => {
+    const html = document.getElementsByTagName('html')[0];
+    html.setAttribute("data-theme", theme);
+  }, [theme]);
+
+  const handelChangeTheme = () => {
+    if (theme === "dark") {
+      setTheme("light");
+    }
+    if (theme === "light") {
+      setTheme("dark");
+    }
+  }
 
   return (
-    <section className='w-full bg-white block fixed top-0 z-50 left-1/2 translate-x-[-50%]'>
+    <section className='w-full bg-base-100 block fixed top-0 z-50 left-1/2 translate-x-[-50%]'>
       <div className="navbar bg-base-100 max-w-[1535px] mx-auto px-6">
         <div className="flex-1">
           <Link to="/">
             <img className='max-h-20 border' src={logo} alt="" />
           </Link>
+          <span onClick={handelChangeTheme} className="btn btn-sm text-2xl hidden md:block ml-2">
+          {
+            (theme === "dark") ? <RiSunLine /> : <IoIosMoon />
+          }
+        </span>
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
