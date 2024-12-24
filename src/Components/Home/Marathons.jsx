@@ -15,7 +15,7 @@ function Marathons() {
   }, [])
 
   return (
-    <div className="m-8">
+    <div className="m-8 mt-20">
       <h1 className="text-5xl font-semibold text-center mb-16">
         Running Marathon's
       </h1>
