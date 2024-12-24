@@ -8,7 +8,7 @@ function MyApplyList() {
   const [applies, setApplies] = useState([]);
 
   useEffect(() => {
-    axiosInstance.get(`/appliesByEmail/?email=${email}`)
+    axiosInstance.get(`/appliesByEmail?email=${email}`)
       .then(res => setApplies(res.data))
       .catch(err => console.log(err))
   }, [])

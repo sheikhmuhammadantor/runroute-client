@@ -1,7 +1,6 @@
-import React from 'react'
 import { Link } from 'react-router-dom';
 
-function DataCard({ marathon, setMarathons, idx }) {
+function DataCard({ marathon }) {
 
     const { _id, title, registrationStartDate, registrationEndDate, marathonStartDate, location, runningDistance, description, image } = marathon;
     // console.log(_id)

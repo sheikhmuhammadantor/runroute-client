@@ -8,7 +8,7 @@ function MyMarathonsList() {
   const [marathons, setMarathons] = useState([]);
 
   useEffect(() => {
-    axiosInstance.get(`/marathonByEmail/?email=${email}`)
+    axiosInstance.get(`/marathonByEmail?email=${email}`)
       .then(res => setMarathons(res.data))
       .catch(err => console.log(err))
   }, [])
