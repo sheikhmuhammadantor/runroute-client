@@ -52,7 +52,7 @@ function MarathonDetails() {
           <p>{description}</p>
           <p className="underline">{location}</p>
           <div>
-            <span><b>Reg. Start:</b></span>
+            <span><b>Total Reg.</b></span>
             <p className="badge bg-black border-transparent text-white p-3 ml-2">{totalRegistrations}</p>
           </div>
           <div className="card-actions justify-center mt-4">

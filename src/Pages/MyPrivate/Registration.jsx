@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useAuth, useAxios } from '../../App'
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import DatePicker from 'react-datepicker';
 import toast from 'react-hot-toast';
@@ -12,7 +12,7 @@ function Registration() {
     const axiosInstance = useAxios();
     const { user: { email, displayName } = {} } = useAuth();
     const [userFastName, userLastName] = displayName.split(' ');
-    // console.log(userFastName,"fsdg", userLastName);
+    const navigate = useNavigate()
 
     useEffect(() => {
         axiosInstance.get(`/marathons/${id}`)
@@ -32,7 +32,7 @@ function Registration() {
         marathonId: _id,
         title,
         marathonStartDate,
-        totalRegistrations
+        registerNo: totalRegistrations + 1
     }
 
     const handelRegisterMarathon = (e) => {
@@ -47,12 +47,13 @@ function Registration() {
             .then((data) => {
                 console.log(data.data);
                 toast.success('Successfully Register !')
-                // axiosInstance.put(`/registrationsIncrement/:${_id}`)
-                //     .then((data) => {
-                //         console.log(data.data);
-                //     })
-                //     .catch(err => console.log(err))
-            })
+                axiosInstance.put(`/registrationsIncrement/${_id}`)
+                    .then((data) => {
+                        console.log(data.data);
+                    })
+                    .catch(err => console.log(err))
+                navigate(`/marathons/${id}`);
+            }).catch(err => console.log(err))
     }
 
     return (
