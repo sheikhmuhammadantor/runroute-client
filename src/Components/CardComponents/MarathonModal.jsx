@@ -4,7 +4,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { useAxios } from '../../App';
 import toast from 'react-hot-toast';
 
-function MarathonModal({ handelUpdateDate, marathon }) {
+function MarathonModal({handelCloseModal, marathon }) {
 
     const { _id,
         title: prevTitle,
@@ -27,8 +27,6 @@ function MarathonModal({ handelUpdateDate, marathon }) {
     const [image, setImage] = useState(prevImage);
     const axiosInstance = useAxios();
 
-    console.log(prevTitle);
-
     const handelAddMarathon = (e) => {
         e.preventDefault();
         {/* if there is a button in form, it will close the modal 😊 */}
@@ -49,6 +47,7 @@ function MarathonModal({ handelUpdateDate, marathon }) {
                     toast.error('Not Modify any Data !', {});
                 }
                 console.log(data.data);
+                handelCloseModal();
             })
             .catch((err) => console.log(err))
     }

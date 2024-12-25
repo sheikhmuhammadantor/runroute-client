@@ -6,9 +6,9 @@ function Footer() {
     <section className='bg-base-200 text-base-content '>
       <footer className="footer p-10 max-w-[1380px] mx-auto">
         <aside>
-          <img className='max-h-20 border border-dashed border-black rounded-md' src={logo} alt="" />
+          <img className='max-h-20 border border-dashed border-base-content rounded-md mb-2' src={logo} alt="" />
           <p className="max-w-xs">
-            CrowdStreet is a real estate investing platform access to individual <br /> commercial real estate investment opportunities, your own investment criteria.
+            RunRoute connects runners and organizers for seamless marathon events. Join us to manage, participate, and excel in your marathon journey.
           </p>
         </aside>
         <nav className='mx-auto'>
