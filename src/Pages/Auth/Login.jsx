@@ -2,7 +2,8 @@ import { useRef, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
-import {useAuth} from '../../App';
+import { useAuth } from '../../App';
+import { Helmet } from "react-helmet";
 
 function Login() {
 
@@ -11,8 +12,8 @@ function Login() {
     const [showPassword, setShowPassword] = useState(false);
     const emailRef = useRef();
     const location = useLocation();
-    
-    if(user?.email) return navigate('/');
+
+    if (user?.email) return navigate('/');
 
     const handelShowPassword = () => {
         setShowPassword(!showPassword);
@@ -64,6 +65,9 @@ function Login() {
 
     return (
         <div className="hero bg-base-200 my-8">
+            <Helmet>
+                <title>RunRoute | Login</title>
+            </Helmet>
             <div className="hero-content flex-col my-5">
                 <div className="text-center lg:text-left">
                     <h1 className="text-3xl md:text-5xl font-bold my-5">Login now !</h1>

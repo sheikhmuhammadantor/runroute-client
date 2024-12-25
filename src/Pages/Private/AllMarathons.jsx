@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { DataCard, useAxios } from "../../App"
+import { Helmet } from "react-helmet"
 
 function AllMarathons() {
 
@@ -15,6 +16,9 @@ function AllMarathons() {
 
   return (
     <div className="m-8">
+      <Helmet>
+        <title>RunRoute | All Marathon</title>
+      </Helmet>
       <h1 className="text-3xl md:text-5xl font-semibold text-center mb-16">
         All Marathon's
       </h1>

@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import DatePicker from 'react-datepicker';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet';
 
 function Registration() {
 
@@ -58,6 +59,9 @@ function Registration() {
 
     return (
         <section className="my-12">
+            <Helmet>
+                <title>RunRoute | {title || ''} Registration</title>
+            </Helmet>
             <div className="my-6 ml-8">
                 <Link to="/" className="flex items-center gap-2 text-xl font-semibold outline outline-1 w-max py-1 px-3 rounded-full cursor-pointer hover:outline-2 hover:shadow-xl"><FaArrowLeft /> Back to home</Link>
             </div>

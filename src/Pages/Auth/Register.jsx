@@ -4,6 +4,7 @@ import toast from 'react-hot-toast';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { auth } from '../../Firebase/firebase';
 import { useAuth } from '../../App';
+import { Helmet } from "react-helmet";
 
 function Register() {
 
@@ -80,6 +81,9 @@ function Register() {
 
   return (
     <div className="hero bg-base-200 my-8">
+      <Helmet>
+        <title>RunRoute | Register</title>
+      </Helmet>
       <div className="hero-content flex-col my-5">
         <div className="text-center lg:text-left">
           <h1 className="text-3xl md:text-5xl font-bold my-5">Register now!</h1>

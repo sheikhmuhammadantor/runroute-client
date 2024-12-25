@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useAxios } from "../../App";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 function MarathonDetails() {
 
@@ -35,6 +36,9 @@ function MarathonDetails() {
 
   return (
     <div className="px-2">
+      <Helmet>
+        <title>RunRoute | {title || ''}</title>
+      </Helmet>
       <h1 className="text-3xl md:text-5xl my-6 text-center">{title}</h1>
       <div className="card card-compact bg-base-100 max-w-[800px] mx-auto my-12 shadow-xl border md:flex-row p-3 sm:p-5">
         <figure>

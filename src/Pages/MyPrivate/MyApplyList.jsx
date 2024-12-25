@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { TableData, useAuth, useAxios } from "../../App";
+import { Helmet } from "react-helmet";
 
 function MyApplyList() {
 
@@ -19,8 +20,11 @@ function MyApplyList() {
 
   return (
     <div className="overflow-x-auto">
+      <Helmet>
+        <title>RunRoute | All Apply List</title>
+      </Helmet>
       <table className="table w-full">
-      <caption className="text-3xl md:text-5xl my-6">All My Apply's</caption>
+        <caption className="text-3xl md:text-5xl my-6">All My Apply's</caption>
         {/* head */}
         <thead>
           <tr>

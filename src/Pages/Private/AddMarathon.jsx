@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useAuth, useAxios } from '../../App';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet';
 
 function AddMarathon() {
 
@@ -42,10 +43,11 @@ function AddMarathon() {
 
     return (
         <section>
-            <div className="my-6 ml-8">
-            </div>
+            <Helmet>
+                <title>RunRoute | Add Marathon</title>
+            </Helmet>
             <div>
-                <div className="bg-base-200 w-full shadow-2xl border rounded-2xl py-6">
+                <div className="mt-8 bg-base-200 w-full shadow-2xl border rounded-2xl py-6">
                     <div className="text-center px-4">
                         <h2 className="text-3xl font-semibold mb-3">Add New Marathon</h2>
                         <p className="">You can add details like the event name, date, location, distances, participant limits, fees, and route maps. <br /> This tool streamlines event setup, making it easy to promote and manage registrations.</p>
