@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 
 function MarathonDetails() {
 
+  const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const [marathon, setMarathon] = useState({});
   const [register, setRegister] = useState(true);
@@ -18,7 +19,10 @@ function MarathonDetails() {
 
   useEffect(() => {
     axiosInstance.get(`/marathons/${id}`)
-      .then(res => setMarathon(res.data))
+      .then(res => {
+        setMarathon(res.data);
+        setLoading(false);
+      })
       .catch(err => console.log(err))
   }, [])
 
@@ -33,6 +37,10 @@ function MarathonDetails() {
       setRegister(true);
     }
   }, [resStartDate, resEndDate, currentDate]);
+
+  if (loading) {
+    return <div className='text-3xl min-h-[70vh] grid place-items-center'><span className="loading loading-spinner text-info w-20"></span></div>
+  }
 
   return (
     <div className="px-2">

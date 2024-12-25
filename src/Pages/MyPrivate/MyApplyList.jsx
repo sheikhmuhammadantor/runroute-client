@@ -4,18 +4,26 @@ import { Helmet } from "react-helmet";
 
 function MyApplyList() {
 
+  const [loading, setLoading] = useState(true);
   const axiosInstance = useAxios();
   const { user: { email } = {} } = useAuth();
   const [applies, setApplies] = useState([]);
 
   useEffect(() => {
     axiosInstance.get(`/appliesByEmail?email=${email}`)
-      .then(res => setApplies(res.data))
+      .then(res => {
+        setApplies(res.data);
+        setLoading(false);
+      })
       .catch(err => console.log(err))
   }, [])
 
   const handelDeleteApply = (id) => {
     return axiosInstance.delete(`/deleteApply/${id}`)
+  }
+
+  if (loading) {
+    return <div className='text-3xl min-h-[70vh] grid place-items-center'><span className="loading loading-spinner text-info w-20"></span></div>
   }
 
   return (

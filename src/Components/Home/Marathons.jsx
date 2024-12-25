@@ -1,17 +1,23 @@
-import { useEffect, useState } from "react"
-import { DataCard, useAxios } from "../../App"
+import { useEffect, useState } from "react";
+import { DataCard, useAxios } from "../../App";
 
 function Marathons() {
 
+  const [ loading, setLoading ] = useState(true);
   const axiosInstance = useAxios()
   const [marathons, setMarathons] = useState([])
 
   useEffect(() => {
     axiosInstance.get('/marathons?isRunning=true')
       .then((data) => {
-        setMarathons(data.data)
+        setMarathons(data.data);
+        setLoading(false);
       })
   }, [])
+
+  if (loading) {
+    return <div className='text-3xl min-h-[70vh] grid place-items-center'><span className="loading loading-spinner text-info w-20"></span></div>
+  }
 
   return (
     <div className="m-8 mt-20 max-w-[1380px] mx-auto">

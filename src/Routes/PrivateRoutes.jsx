@@ -7,7 +7,7 @@ function PrivateRoutes({ children }) {
     const location = useLocation();
 
     if (loading) {
-        return <div className='text-3xl min-h-[70vh] grid place-items-center'><span className="loading loading-spinner text-info loading-lg"></span></div>
+        return <div className='text-3xl min-h-[70vh] grid place-items-center'><span className="loading loading-spinner text-info w-20"></span></div>
     }
 
     if (user) {

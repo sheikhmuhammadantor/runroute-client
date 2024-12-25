@@ -4,18 +4,26 @@ import { Helmet } from "react-helmet";
 
 function MyMarathonsList() {
 
+  const [loading, setLoading] = useState(true);
   const axiosInstance = useAxios();
   const { user: { email } = {} } = useAuth();
   const [marathons, setMarathons] = useState([]);
 
   useEffect(() => {
     axiosInstance.get(`/marathonByEmail?email=${email}`)
-      .then(res => setMarathons(res.data))
+      .then(res => {
+        setMarathons(res.data);
+        setLoading(false);
+      })
       .catch(err => console.log(err))
   }, [])
 
   const handelDeleteMarathon = (id) => {
     return axiosInstance.delete(`/deleteMarathon/${id}`)
+  }
+
+  if (loading) {
+    return <div className='text-3xl min-h-[70vh] grid place-items-center'><span className="loading loading-spinner text-info w-20"></span></div>
   }
 
   return (

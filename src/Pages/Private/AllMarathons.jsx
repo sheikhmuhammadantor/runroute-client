@@ -4,18 +4,24 @@ import { Helmet } from "react-helmet"
 
 function AllMarathons() {
 
-  const axiosInstance = useAxios()
-  const [marathons, setMarathons] = useState([])
+  const [loading, setLoading] = useState(true);
+  const axiosInstance = useAxios();
+  const [marathons, setMarathons] = useState([]);
 
   useEffect(() => {
     axiosInstance.get('/marathons')
       .then((data) => {
-        setMarathons(data.data)
+        setMarathons(data.data);
+        setLoading(false);
       })
   }, [])
 
+  if (loading) {
+    return <div className='text-3xl min-h-[70vh] grid place-items-center'><span className="loading loading-spinner text-info w-20"></span></div>
+  }
+
   return (
-    <div className="m-8">
+    <div className="m-8 max-w-[1380px] mx-auto">
       <Helmet>
         <title>RunRoute | All Marathon</title>
       </Helmet>
