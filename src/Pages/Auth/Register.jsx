@@ -12,12 +12,12 @@ function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
-  if(user?.email) return navigate('/')
+  if (user?.email) return navigate('/');
 
   const handelShowPassword = () => {
     setShowPassword(!showPassword);
   }
-  
+
   const handelRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -82,7 +82,7 @@ function Register() {
     <div className="hero bg-base-200 my-8">
       <div className="hero-content flex-col my-5">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold my-5">Register now!</h1>
+          <h1 className="text-3xl md:text-5xl font-bold my-5">Register now!</h1>
         </div>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <form onSubmit={handelRegister} className="card-body">

@@ -33,13 +33,14 @@ function Navbar() {
       setTheme("dark");
     }
   }
+  
 
   return (
     <section className='w-full bg-base-100 block fixed top-0 z-50 left-1/2 translate-x-[-50%]'>
       <div className="navbar bg-base-100 max-w-[1535px] mx-auto px-6">
         <div className="flex-1">
           <Link to="/">
-            <img className='max-h-20 bg-white' src={logo} alt="" />
+            <img className='max-h-20 bg-white rounded-3xl' src={logo} alt="" />
           </Link>
           <span onClick={handelChangeTheme} className="btn btn-sm text-2xl hidden md:block ml-2">
           {

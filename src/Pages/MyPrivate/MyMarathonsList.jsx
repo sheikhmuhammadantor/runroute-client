@@ -18,8 +18,9 @@ function MyMarathonsList() {
   }
 
   return (
-    <div className="overflow-x-auto mt-8">
+    <div className="overflow-x-auto">
       <table className="table w-full">
+        <caption className="text-3xl md:text-5xl my-6">All My Marathon's</caption>
         {/* head */}
         <thead>
           <tr>

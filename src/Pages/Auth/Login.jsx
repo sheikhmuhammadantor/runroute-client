@@ -12,7 +12,7 @@ function Login() {
     const emailRef = useRef();
     const location = useLocation();
     
-    if(user?.email) return navigate('/')
+    if(user?.email) return navigate('/');
 
     const handelShowPassword = () => {
         setShowPassword(!showPassword);
@@ -66,7 +66,7 @@ function Login() {
         <div className="hero bg-base-200 my-8">
             <div className="hero-content flex-col my-5">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold my-5">Login now !</h1>
+                    <h1 className="text-3xl md:text-5xl font-bold my-5">Login now !</h1>
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <form onSubmit={handelLogIn} className="card-body">

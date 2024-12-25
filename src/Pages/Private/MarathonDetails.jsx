@@ -7,8 +7,6 @@ function MarathonDetails() {
   const { id } = useParams();
   const [marathon, setMarathon] = useState({});
   const axiosInstance = useAxios();
-  // Destructuring all data from the marathon object
-  // console.log(marathon);
   const { _id, title, registrationStartDate, registrationEndDate, marathonStartDate, location, runningDistance, description, image, createdAt, totalRegistrations } = marathon || {};
 
   function formatDate(dateStr) {
@@ -24,6 +22,7 @@ function MarathonDetails() {
 
   return (
     <div className="px-2">
+      <h1 className="text-3xl md:text-5xl my-6 text-center">{title}</h1>
       <div className="card card-compact bg-base-100 max-w-[800px] mx-auto my-12 shadow-xl border md:flex-row p-3 sm:p-5">
         <figure>
           <img className="rounded-xl" src={image} alt={title} />
