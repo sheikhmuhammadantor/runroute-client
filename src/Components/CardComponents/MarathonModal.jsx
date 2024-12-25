@@ -1,41 +1,54 @@
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { useAuth, useAxios } from '../../App';
+import { useAxios } from '../../App';
 import toast from 'react-hot-toast';
 
-function AddMarathon() {
+function MarathonModal({ handelUpdateDate, marathon }) {
 
-    const { user: { email } = {} } = useAuth();
-    const [title, setTitle] = useState("");
-    const [registrationStartDate, setRegistrationStartDate] = useState(null);
-    const [registrationEndDate, setRegistrationEndDate] = useState(null);
-    const [marathonStartDate, setMarathonStartDate] = useState(null);
-    const [location, setLocation] = useState("");
-    const [runningDistance, setRunningDistance] = useState("");
-    const [description, setDescription] = useState("");
-    const [image, setImage] = useState("");
+    const { _id,
+        title: prevTitle,
+        registrationStartDate: prevRegStartDate,
+        registrationEndDate: prevRegEndDate,
+        marathonStartDate: prevMarathonStartDate,
+        location: prevLocation,
+        runningDistance: prevRunDis,
+        description: prevDescription,
+        image: prevImage,
+    } = marathon || {};
+
+    const [title, setTitle] = useState(prevTitle);
+    const [registrationStartDate, setRegistrationStartDate] = useState(prevRegStartDate);
+    const [registrationEndDate, setRegistrationEndDate] = useState(prevRegEndDate);
+    const [marathonStartDate, setMarathonStartDate] = useState(prevMarathonStartDate);
+    const [location, setLocation] = useState(prevLocation);
+    const [runningDistance, setRunningDistance] = useState(prevRunDis);
+    const [description, setDescription] = useState(prevDescription);
+    const [image, setImage] = useState(prevImage);
     const axiosInstance = useAxios();
+
+    console.log(prevTitle);
 
     const handelAddMarathon = (e) => {
         e.preventDefault();
+        {/* if there is a button in form, it will close the modal 😊 */}
 
         const newMarathon = {
-            title,
             registrationStartDate,
             registrationEndDate,
-            marathonStartDate,
             location,
             runningDistance,
             description,
-            image,
-            createdAt: new Date(),
-            creatorEmail: email,
-            totalRegistrations: 0,
+            image
         };
-        axiosInstance.post(`/addMarathon`, newMarathon)
+        axiosInstance.put(`/updateMarathon/${_id}`, newMarathon)
             .then((data) => {
-                toast.success('Successfully Submit Data !', {})
+                if (data.data.modifiedCount) {
+                    toast.success('Successfully Update Data !', {});
+                } else {
+                    toast.error('Not Modify any Data !', {});
+                }
+                console.log(data.data);
             })
             .catch((err) => console.log(err))
     }
@@ -47,8 +60,7 @@ function AddMarathon() {
             <div>
                 <div className="bg-base-200 w-full shadow-2xl border rounded-2xl py-6">
                     <div className="text-center px-4">
-                        <h2 className="text-3xl font-semibold mb-3">Add New Marathon</h2>
-                        <p className="">You can add details like the event name, date, location, distances, participant limits, fees, and route maps. <br /> This tool streamlines event setup, making it easy to promote and manage registrations.</p>
+
                     </div>
                     {/* From Start Here - */}
                     <form onSubmit={handelAddMarathon} className="card-body ">
@@ -61,10 +73,10 @@ function AddMarathon() {
                                 <input
                                     type="text"
                                     value={title}
-                                    onChange={(e) => setTitle(e.target.value)}
                                     placeholder="Campaign Title"
                                     className="input input-bordered"
-                                    required />
+                                    required
+                                    readOnly />
                             </div>
                             {/* Marathon Start Date */}
                             <div className="form-control w-full">
@@ -73,10 +85,10 @@ function AddMarathon() {
                                 </label>
                                 <DatePicker
                                     selected={marathonStartDate}
-                                    onChange={(date) => setMarathonStartDate(date)}
                                     className="input input-bordered w-full"
                                     dateFormat="yyyy-MM-dd"
                                     required
+                                    readOnly
                                 />
                             </div>
                         </div>
@@ -168,7 +180,7 @@ function AddMarathon() {
                         </div>
                         {/* Add Button */}
                         <div className="mt-8 mx-8 text-center">
-                            <button className="btn bg-teal-500 text-lg text-white outline-2 outline outline-black outline-offset-0 w-full">Submit</button>
+                            <button className="btn bg-teal-500 text-lg text-white outline-2 outline outline-black outline-offset-0 w-40 sm:w-40 md:w-80 lg:w-96 xl:w-[600px]">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -177,4 +189,4 @@ function AddMarathon() {
     )
 }
 
-export default AddMarathon
+export default MarathonModal

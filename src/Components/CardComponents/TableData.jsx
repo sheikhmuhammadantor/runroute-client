@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { ImCross } from "react-icons/im";
 import { MdEdit } from "react-icons/md";
-import { Link } from "react-router-dom";
+import MarathonModal from "./MarathonModal";
 
 function TableData({ marathon, setMarathons, idx, handelDelete, applies = false }) {
 
     const { _id, title, registrationStartDate, registrationEndDate, marathonStartDate, location, runningDistance, description, image, createdAt, totalRegistrations } = marathon || {};
-    const [modal, setModal] = useState(null);
+    // const [modal, setModal] = useState(null);
 
     function formatDate(dateStr) {
         return new Date(dateStr).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -20,16 +20,16 @@ function TableData({ marathon, setMarathons, idx, handelDelete, applies = false 
             .catch(err => console.log(err))
     }
 
-    useEffect(() => {
-        setModal(document?.getElementById('my_modal_1'))
-    }, []);
+    // useEffect(() => {
+    //     setModal(document?.getElementById('my_modal_1'))
+    // }, []);
 
-    const handelShowModal = () => {
-        modal?.showModal()
+    const handelShowModal = (id) => {
+        document?.getElementById(`my_modal_${id}`).showModal()
     }
 
-    const handelUpdateDate = () => {
-        modal?.close()
+    const handelUpdateDate = (id) => {
+        // document?.getElementById(`my_modal_${id}`).close()
     }
 
     return (
@@ -48,18 +48,16 @@ function TableData({ marathon, setMarathons, idx, handelDelete, applies = false 
                         </>
                 }
                 <td className="space-x-2 space-y-2 text-center border border-base-content border-r-2">
-                    <button onClick={handelShowModal} className="p-2 border rounded-full hover:border-transparent hover:text-white duration-150 hover:bg-teal-400"><MdEdit /></button>
+                    <button onClick={() => handelShowModal(_id)} className="p-2 border rounded-full hover:border-transparent hover:text-white duration-150 hover:bg-teal-400"><MdEdit /></button>
                     <button onClick={() => handelDeleteData(_id)} className="p-2 border rounded-full hover:border-transparent hover:text-white duration-150 hover:bg-[#f70000]"><ImCross /></button>
                     {/* Dialog Box For Modal - */}
                     <>
-                        <dialog id="my_modal_1" className="modal">
+                        <dialog id={`my_modal_${_id}`} className="modal">
                             <div className="modal-box max-w-max">
-                                <h3 className="font-bold text-lg">{title} - Updating</h3>
-                                <h1>hi</h1>
+                                <MarathonModal handelUpdateDate={() => handelUpdateDate(_id)} marathon={marathon} />
                                 <div className="modal-action">
-                                    <button onClick={() => handelUpdateDate()} className="btn">Update</button>
                                     <form method="dialog">
-                                        <button className="btn mx-4">Close</button>
+                                        <button className="btn btn-warning text-lg text-white outline-2 outline outline-black outline-offset-0">Close</button>
                                     </form>
                                 </div>
                             </div>
