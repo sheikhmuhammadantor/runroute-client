@@ -6,6 +6,7 @@ function MarathonDetails() {
 
   const { id } = useParams();
   const [marathon, setMarathon] = useState({});
+  const [register, setRegister] = useState(true);
   const axiosInstance = useAxios();
   const { _id, title, registrationStartDate, registrationEndDate, marathonStartDate, location, runningDistance, description, image, createdAt, totalRegistrations } = marathon || {};
 
@@ -19,6 +20,18 @@ function MarathonDetails() {
       .then(res => setMarathon(res.data))
       .catch(err => console.log(err))
   }, [])
+
+  const resStartDate = new Date(registrationStartDate);
+  const resEndDate = new Date(registrationEndDate);
+  const currentDate = new Date();
+
+  useEffect(() => {
+    if (resStartDate < currentDate && resEndDate > currentDate) {
+      setRegister(false);
+    } else {
+      setRegister(true);
+    }
+  }, [resStartDate, resEndDate, currentDate]);
 
   return (
     <div className="px-2">
@@ -43,7 +56,7 @@ function MarathonDetails() {
             <p className="badge bg-black border-transparent text-white p-3 ml-2">{totalRegistrations}</p>
           </div>
           <div className="card-actions justify-center mt-4">
-            <Link to={`/registration/${_id}`} className="btn btn-sm btn-accent text-lg px-8 disabled:btn-info disabled:opacity-60 disabled:cursor-none">Register</Link>
+            <button disabled={register} className="btn btn-sm btn-accent text-lg px-8 disabled:border disabled:border-base-content disabled:text-base-content/40 "><Link to={`/registration/${_id}`} className="w-full">Register</Link></button>
           </div>
         </div>
       </div>
