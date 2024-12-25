@@ -23,11 +23,11 @@ function MyMarathonsList() {
         {/* head */}
         <thead>
           <tr>
-            <th className="text-center text-base text-base-content border border-b-base-content">ID</th>
-            <th className="text-center text-base text-base-content border border-b-base-content">Title</th>
-            <th className="text-center text-base text-base-content border border-b-base-content">Location</th>
-            <th className="text-center text-base text-base-content border border-b-base-content hidden lg:table-cell">Distance</th>
-            <th className="text-center text-base text-base-content border border-b-base-content">Action</th>
+            <th className="text-center text-base text-base-content border border-base-content border-b-2">ID</th>
+            <th className="text-center text-base text-base-content border border-base-content border-b-2">Title</th>
+            <th className="text-center text-base text-base-content border border-base-content border-b-2">Location</th>
+            <th className="text-center text-base text-base-content border border-base-content border-b-2 hidden lg:table-cell">Distance</th>
+            <th className="text-center text-base text-base-content border border-base-content border-b-2">Action</th>
           </tr>
         </thead>
         <tbody>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useAuth, useAxios } from '../../App';
+import toast from 'react-hot-toast';
 
 function AddMarathon() {
 
@@ -34,11 +35,11 @@ function AddMarathon() {
             creatorEmail: email,
             totalRegistrations: 0,
         };
-        // console.log("Marathon Created:", newMarathon);
         axiosInstance.post(`/addMarathon`, newMarathon)
             .then((data) => {
-                console.log(data.data);
+                toast.success('Successfully Submit Data !', {})
             })
+            .catch((err) => console.log(err))
     }
 
     return (
@@ -169,7 +170,7 @@ function AddMarathon() {
                         </div>
                         {/* Add Button */}
                         <div className="mt-8 mx-8 text-center">
-                            <button className="btn bg-teal-500 text-lg text-white outline-2 outline outline-black outline-offset-0 w-full">Add Marathon</button>
+                            <button className="btn bg-teal-500 text-lg text-white outline-2 outline outline-black outline-offset-0 w-full">Submit</button>
                         </div>
                     </form>
                 </div>

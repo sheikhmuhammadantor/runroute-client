@@ -23,10 +23,10 @@ function MyApplyList() {
         {/* head */}
         <thead>
           <tr>
-            <th className="text-center text-base text-base-content border border-b-base-content">ID</th>
-            <th className="text-center text-base text-base-content border border-b-base-content">Title</th>
-            <th className="text-center text-base text-base-content border border-b-base-content">Start Date</th>
-            <th className="text-center text-base text-base-content border border-b-base-content">Action</th>
+            <th className="text-center text-base text-base-content border border-base-content border-b-2">ID</th>
+            <th className="text-center text-base text-base-content border border-base-content border-b-2">Title</th>
+            <th className="text-center text-base text-base-content border border-base-content border-b-2">Start Date</th>
+            <th className="text-center text-base text-base-content border border-base-content border-b-2">Action</th>
           </tr>
         </thead>
         <tbody>

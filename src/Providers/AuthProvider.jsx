@@ -38,6 +38,7 @@ function AuthProvider({ children }) {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             if (currentUser) {
                 setUser(currentUser)
+                console.log(currentUser)
 
                 const user = { email: currentUser?.email }
                 axiosInstance.post(`/jwt`, user)

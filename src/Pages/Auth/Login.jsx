@@ -6,11 +6,13 @@ import {useAuth} from '../../App';
 
 function Login() {
 
-    const { signInUser, googleSignIn, setEmail } = useAuth();
+    const { user, signInUser, googleSignIn, setEmail } = useAuth();
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const emailRef = useRef();
     const location = useLocation();
+    
+    if(user?.email) return navigate('/')
 
     const handelShowPassword = () => {
         setShowPassword(!showPassword);

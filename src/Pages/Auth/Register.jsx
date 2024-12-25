@@ -2,17 +2,17 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-// import { auth } from '../Firebase/firebase';
 import { auth } from '../../Firebase/firebase';
 import { useAuth } from '../../App';
 
 function Register() {
 
-  const { createUser, googleSignIn } = useAuth()
+  const { user, createUser, googleSignIn } = useAuth()
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
+  if(user?.email) return navigate('/')
 
   const handelShowPassword = () => {
     setShowPassword(!showPassword);

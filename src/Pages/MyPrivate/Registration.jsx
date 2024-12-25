@@ -9,7 +9,7 @@ function Registration() {
     const { id } = useParams();
     const [marathon, setMarathon] = useState({});
     const axiosInstance = useAxios();
-    const { user: { email } = {} } = useAuth();
+    const { user: { email, displayName } = {} } = useAuth();
 
     useEffect(() => {
         axiosInstance.get(`/marathons/${id}`)
@@ -79,7 +79,7 @@ function Registration() {
                                 </label>
                                 <DatePicker
                                     selected={formattedStartDate}
-                                    className='input input-bordered disabled:text-black'
+                                    className='input input-bordered disabled:text-base-content'
                                     dateFormat="dd MMM yyyy"
                                     disabled
                                 />

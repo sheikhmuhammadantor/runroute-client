@@ -24,7 +24,7 @@ function DataCard({ marathon }) {
                 <p><b>Reg. Start:</b> {formatDate(registrationStartDate)}</p>
                 <p><b>Reg. End:</b> {formatDate(registrationEndDate)}</p>
                 <p>{description}</p>
-                <p>{location}</p>
+                <p className='underline'>{location}</p>
                 <div className="card-actions justify-center mt-4">
                     <Link to={`/marathons/${_id}`} className="btn btn-sm text-lg px-8">See mote</Link>
                 </div>

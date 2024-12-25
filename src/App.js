@@ -20,5 +20,6 @@ import Registration from "./Pages/MyPrivate/Registration";
 import TableData from "./Components/CardComponents/TableData";
 import UserFeedback from "./Components/Home/UserFeedback";
 import PhotoGallery from "./Components/Home/PhotoGallery";
+import ResetPassword from "./Pages/Auth/ResetPassword";
 
-export { MainLayout, Home, Marathons, Banner, UpcomingMarathons, useAuth , Login, Register, ErrorPage,Dashboard , AddMarathon, useAxios, AllMarathons, MarathonDetails, MyMarathonsList, MyApplyList, PrivateRoutes, DataCard, Registration,TableData, UserFeedback, PhotoGallery };
+export { MainLayout, Home, Marathons, Banner, UpcomingMarathons, useAuth , Login, Register, ErrorPage,Dashboard , AddMarathon, useAxios, AllMarathons, MarathonDetails, MyMarathonsList, MyApplyList, PrivateRoutes, DataCard, Registration,TableData, UserFeedback, PhotoGallery, ResetPassword };

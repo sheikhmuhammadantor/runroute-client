@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { AddMarathon, AllMarathons, Dashboard, ErrorPage, Home, Login, MainLayout, MarathonDetails, MyApplyList, MyMarathonsList, PrivateRoutes, Register, Registration } from "../App";
+import { AddMarathon, AllMarathons, Dashboard, ErrorPage, Home, Login, MainLayout, MarathonDetails, MyApplyList, MyMarathonsList, PrivateRoutes, Register, Registration, ResetPassword } from "../App";
 
 export const routes = createBrowserRouter([
     {
@@ -48,6 +48,10 @@ export const routes = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register />,
+            },
+            {
+                path: "/reset-password",
+                element: <ResetPassword />,
             }
         ]
     }
