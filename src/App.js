@@ -21,5 +21,6 @@ import TableData from "./Components/CardComponents/TableData";
 import UserFeedback from "./Components/Home/UserFeedback";
 import PhotoGallery from "./Components/Home/PhotoGallery";
 import ResetPassword from "./Pages/Auth/ResetPassword";
+import MarathonCountdown from "./Components/CardComponents/MarathonCountdown";
 
-export { MainLayout, Home, Marathons, Banner, UpcomingMarathons, useAuth , Login, Register, ErrorPage,Dashboard , AddMarathon, useAxios, AllMarathons, MarathonDetails, MyMarathonsList, MyApplyList, PrivateRoutes, DataCard, Registration,TableData, UserFeedback, PhotoGallery, ResetPassword };
+export { MainLayout, Home, Marathons, Banner, UpcomingMarathons, useAuth , Login, Register, ErrorPage,Dashboard , AddMarathon, useAxios, AllMarathons, MarathonDetails, MyMarathonsList, MyApplyList, PrivateRoutes, DataCard, Registration,TableData, UserFeedback, PhotoGallery, ResetPassword, MarathonCountdown };

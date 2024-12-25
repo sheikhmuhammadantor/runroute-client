@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { useAxios } from "../../App";
+import { MarathonCountdown, useAxios } from "../../App";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 
@@ -11,6 +11,8 @@ function MarathonDetails() {
   const [register, setRegister] = useState(true);
   const axiosInstance = useAxios();
   const { _id, title, registrationStartDate, registrationEndDate, marathonStartDate, location, runningDistance, description, image, createdAt, totalRegistrations } = marathon || {};
+
+  const marathonStartCountdown = new Date(marathonStartDate);
 
   function formatDate(dateStr) {
     return new Date(dateStr)
@@ -47,7 +49,11 @@ function MarathonDetails() {
       <Helmet>
         <title>RunRoute | {title || ''}</title>
       </Helmet>
-      <h1 className="text-3xl md:text-5xl my-6 text-center">{title}</h1>
+      <div>
+        <div className="flex items-center justify-center bg-base-200 py-4">
+          <MarathonCountdown targetDate={marathonStartCountdown} />
+        </div>
+      </div>
       <div className="card card-compact bg-base-100 max-w-[800px] mx-auto my-12 shadow-xl border md:flex-row p-3 sm:p-5">
         <figure>
           <img className="rounded-xl" src={image} alt={title} />
