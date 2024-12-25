@@ -22,12 +22,23 @@ function MyMarathonsList() {
     return axiosInstance.delete(`/deleteMarathon/${id}`)
   }
 
+  const handelSortClick = () => {
+    axiosInstance.get(`/marathonByEmail/sort?email=${email}`)
+      .then((res) => {
+        setMarathons([...res.data]);
+        console.log(res.data);
+      })
+  }
+
   if (loading) {
     return <div className='text-3xl min-h-[70vh] grid place-items-center'><span className="loading loading-spinner text-info w-20"></span></div>
   }
 
   return (
     <div className="overflow-x-auto">
+      <div className="text-right mr-6">
+        <button onClick={handelSortClick} className="btn btn-warning text-black text-xl">Sort</button>
+      </div>
       <Helmet>
         <title>RunRoute | My Marathons</title>
       </Helmet>
