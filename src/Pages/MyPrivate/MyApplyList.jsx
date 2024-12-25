@@ -5,9 +5,9 @@ import { Helmet } from "react-helmet";
 function MyApplyList() {
 
   const [loading, setLoading] = useState(true);
+  const [applies, setApplies] = useState([]);
   const axiosInstance = useAxios();
   const { user: { email } = {} } = useAuth();
-  const [applies, setApplies] = useState([]);
 
   useEffect(() => {
     axiosInstance.get(`/appliesByEmail?email=${email}`)
@@ -22,6 +22,14 @@ function MyApplyList() {
     return axiosInstance.delete(`/deleteApply/${id}`)
   }
 
+  const handelSearch = (e) => {
+    const searchValue = e.target.value;
+    axiosInstance.get(`/apply_search?query=${searchValue}`)
+      .then(res => {
+        setApplies(res.data);
+      }).catch(err => console.log(err))
+  }
+
   if (loading) {
     return <div className='text-3xl min-h-[70vh] grid place-items-center'><span className="loading loading-spinner text-info w-20"></span></div>
   }
@@ -32,7 +40,9 @@ function MyApplyList() {
         <title>RunRoute | All Apply List</title>
       </Helmet>
       <table className="table w-full">
-        <caption className="text-3xl md:text-5xl my-6">All My Apply's</caption>
+        <caption className="my-6">
+          <input onChange={handelSearch} type="text" placeholder="Search" className="input input-bordered w-full max-w-xs" />
+        </caption>
         {/* head */}
         <thead>
           <tr>
