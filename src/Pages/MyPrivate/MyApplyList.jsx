@@ -24,7 +24,7 @@ function MyApplyList() {
 
   const handelSearch = (e) => {
     const searchValue = e.target.value;
-    axiosInstance.get(`/apply_search?query=${searchValue}`)
+    axiosInstance.get(`/apply_search?query=${searchValue}&email=${email}`)
       .then(res => {
         setApplies(res.data);
       }).catch(err => console.log(err.status))
