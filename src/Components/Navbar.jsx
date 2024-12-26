@@ -4,6 +4,7 @@ import { useAuth } from '../App';
 import { useEffect, useState } from 'react';
 import { RiSunLine } from 'react-icons/ri'
 import { IoIosMoon } from 'react-icons/io'
+import toast from 'react-hot-toast';
 
 function Navbar() {
 
@@ -13,7 +14,7 @@ function Navbar() {
   const handelSignOut = () => {
     signOutUser()
       .then(() => {
-        console.log('Sign Out Successfully')
+        toast.success('Sign Out Successfully', {})
       })
       .catch((error) => {
         console.log(error.message)
@@ -33,7 +34,7 @@ function Navbar() {
       setTheme("dark");
     }
   }
-  
+
 
   return (
     <section className='w-full bg-base-100 block fixed top-0 z-50 left-1/2 translate-x-[-50%]'>
@@ -43,10 +44,10 @@ function Navbar() {
             <img className='max-h-20 bg-white rounded-3xl' src={logo} alt="" />
           </Link>
           <span onClick={handelChangeTheme} className="btn btn-sm text-2xl hidden md:block ml-2">
-          {
-            (theme === "dark") ? <RiSunLine /> : <IoIosMoon />
-          }
-        </span>
+            {
+              (theme === "dark") ? <RiSunLine /> : <IoIosMoon />
+            }
+          </span>
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">

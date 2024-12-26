@@ -12,13 +12,13 @@ function TableData({ marathon, setMarathons, idx, handelDelete, applies = false 
             .then(() => {
                 setMarathons((prev) => prev.filter((item, index) => index !== idx))
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err.status))
     }
 
     const handelShowModal = (id) => {
         document?.getElementById(`my_modal_${id}`).showModal()
     }
-    
+
     const handelCloseModal = (id) => {
         document?.getElementById(`my_modal_${id}`).close()
     }
@@ -46,9 +46,9 @@ function TableData({ marathon, setMarathons, idx, handelDelete, applies = false 
                         <dialog id={`my_modal_${_id}`} className="modal">
                             <div className="modal-box max-w-max">
                                 {
-                                    applies ? 
-                                    <ApplyModal handelCloseModal={() => handelCloseModal(_id)} marathon={marathon} /> :
-                                    <MarathonModal handelCloseModal={() => handelCloseModal(_id)} marathon={marathon} />
+                                    applies ?
+                                        <ApplyModal handelCloseModal={() => handelCloseModal(_id)} marathon={marathon} /> :
+                                        <MarathonModal handelCloseModal={() => handelCloseModal(_id)} marathon={marathon} />
                                 }
                                 <div className="modal-action">
                                     <form method="dialog">

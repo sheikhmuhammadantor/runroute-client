@@ -15,7 +15,7 @@ function MyMarathonsList() {
         setMarathons(res.data);
         setLoading(false);
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err.status))
   }, [])
 
   const handelDeleteMarathon = (id) => {
@@ -26,7 +26,6 @@ function MyMarathonsList() {
     axiosInstance.get(`/marathonByEmail/sort?email=${email}`)
       .then((res) => {
         setMarathons([...res.data]);
-        console.log(res.data);
       })
   }
 

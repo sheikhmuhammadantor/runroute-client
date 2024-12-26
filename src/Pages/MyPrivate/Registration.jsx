@@ -22,7 +22,7 @@ function Registration() {
                 setMarathon(res.data);
                 setLoading(false);
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err.status))
     }, [])
 
     const { _id, title, marathonStartDate, totalRegistrations } = marathon || {};
@@ -50,15 +50,16 @@ function Registration() {
 
         axiosInstance.post(`/registration/:${_id}`, newRegistration)
             .then((data) => {
-                console.log(data.data);
                 toast.success('Successfully Register !')
                 axiosInstance.put(`/registrationsIncrement/${_id}`)
                     .then((data) => {
-                        console.log(data.data);
+                        if (data.data.modifiedCount) {
+                            toast.success('Increment Reg. Count !', {});
+                        }
                     })
-                    .catch(err => console.log(err))
+                    .catch(err => console.log(err.status))
                 navigate(`/marathons/${id}`);
-            }).catch(err => console.log(err))
+            }).catch(err => console.log(err.status))
     }
 
     if (loading) {

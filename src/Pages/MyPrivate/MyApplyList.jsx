@@ -15,7 +15,7 @@ function MyApplyList() {
         setApplies(res.data);
         setLoading(false);
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err.status))
   }, [])
 
   const handelDeleteApply = (id) => {
@@ -27,7 +27,7 @@ function MyApplyList() {
     axiosInstance.get(`/apply_search?query=${searchValue}`)
       .then(res => {
         setApplies(res.data);
-      }).catch(err => console.log(err))
+      }).catch(err => console.log(err.status))
   }
 
   if (loading) {

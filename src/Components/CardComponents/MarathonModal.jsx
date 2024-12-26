@@ -4,7 +4,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { useAxios } from '../../App';
 import toast from 'react-hot-toast';
 
-function MarathonModal({handelCloseModal, marathon }) {
+function MarathonModal({ handelCloseModal, marathon }) {
 
     const { _id,
         title: prevTitle,
@@ -29,7 +29,7 @@ function MarathonModal({handelCloseModal, marathon }) {
 
     const handelAddMarathon = (e) => {
         e.preventDefault();
-        {/* if there is a button in form, it will close the modal 😊 */}
+        {/* if there is a button in form, it will close the modal 😊 */ }
 
         const newMarathon = {
             registrationStartDate,
@@ -46,7 +46,6 @@ function MarathonModal({handelCloseModal, marathon }) {
                 } else {
                     toast.error('Not Modify any Data !', {});
                 }
-                console.log(data.data);
                 handelCloseModal();
             })
             .catch((err) => console.log(err))

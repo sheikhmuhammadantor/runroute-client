@@ -25,7 +25,7 @@ function MarathonDetails() {
         setMarathon(res.data);
         setLoading(false);
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err.status))
   }, [])
 
   const resStartDate = new Date(registrationStartDate);

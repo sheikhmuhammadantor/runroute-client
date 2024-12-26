@@ -17,7 +17,7 @@ function ApplyModal({ handelCloseModal, marathon }) {
 
     const handelRegisterMarathon = (e) => {
         e.preventDefault();
-        {/* if there is a button in form, it will close the modal 😊 */}
+        {/* if there is a button in form, it will close the modal 😊 */ }
 
         const form = e.target;
         const firstName = form.firstName.value;
@@ -32,7 +32,6 @@ function ApplyModal({ handelCloseModal, marathon }) {
                 } else {
                     toast.error('Not Modify any Data !', {});
                 }
-                console.log(data.data);
                 handelCloseModal();
             })
             .catch((err) => console.log(err))

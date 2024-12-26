@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 function DataCard({ marathon }) {
 
     const { _id, title, registrationStartDate, registrationEndDate, marathonStartDate, location, runningDistance, description, image } = marathon;
-    // console.log(_id)
 
     function formatDate(dateStr) {
         return new Date(dateStr)

@@ -38,7 +38,6 @@ function AuthProvider({ children }) {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             if (currentUser) {
                 setUser(currentUser)
-                console.log(currentUser)
 
                 const user = { email: currentUser?.email }
                 axiosInstance.post(`/jwt`, user)
@@ -46,8 +45,9 @@ function AuthProvider({ children }) {
             }
             else {
                 setUser(null)
-
-                axiosInstance.post(`/logout`).then(res => console.log('LogOut', res.data))
+                axiosInstance.post(`/logout`)
+                    .then(res => console.log('LogOut', res.data))
+                    .catch(err => console.log(err))
             }
             setLoading(false)
         })
