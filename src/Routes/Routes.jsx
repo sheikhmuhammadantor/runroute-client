@@ -1,5 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import { AddMarathon, AllMarathons, Dashboard, ErrorPage, Home, Login, MainLayout, MarathonDetails, MyApplyList, MyMarathonsList, PrivateRoutes, Register, Registration, ResetPassword } from "../App";
+import AboutUs from "../Pages/Static/AboutUs";
+import ContactUs from "../Pages/Static/Contact";
+import Support from "../Pages/Static/Support";
 
 export const routes = createBrowserRouter([
     {
@@ -40,6 +43,18 @@ export const routes = createBrowserRouter([
             {
                 path: "/registration/:id",
                 element: <PrivateRoutes><Registration /></PrivateRoutes>,
+            },
+            {
+                path: "/aboutUs",
+                element: <AboutUs />,
+            },
+            {
+                path: "/contactUs",
+                element: <ContactUs />,
+            },
+            {
+                path: "/support",
+                element: <Support />,
             },
             {
                 path: "/login",

@@ -19,6 +19,7 @@ function AllMarathons() {
   }, []);
 
   useEffect(() => {
+    setLoading(true);
     axiosInstance.get(`/marathons?skip=${(currentPage - 1) * itemPerPage}&limit=${itemPerPage}`)
       .then((data) => {
         setMarathons(data.data);
@@ -42,9 +43,9 @@ function AllMarathons() {
     if (currentPage < numberOfPage) setCurrentPage(currentPage + 1)
   }
 
-  // if (loading) {
-  //   return <div className='text-3xl min-h-[70vh] grid place-items-center'><span className="loading loading-spinner text-info w-20"></span></div>
-  // }
+  if (loading) {
+    return <div className='text-3xl min-h-[70vh] grid place-items-center'><span className="loading loading-spinner text-info w-20"></span></div>
+  }
 
   return (
     <div className="m-8 max-w-[1380px] mx-auto">
