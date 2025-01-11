@@ -9,6 +9,7 @@ function AllMarathons() {
   const [itemCount, setItemCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemPerPage, setItemPerPage] = useState(9);
+  const [sort, setSort] = useState(null);
   const axiosInstance = useAxios();
 
   useEffect(() => {
@@ -20,12 +21,12 @@ function AllMarathons() {
 
   useEffect(() => {
     setLoading(true);
-    axiosInstance.get(`/marathons?skip=${(currentPage - 1) * itemPerPage}&limit=${itemPerPage}`)
+    axiosInstance.get(`/marathons?skip=${(currentPage - 1) * itemPerPage}&limit=${itemPerPage}&sort=${sort}`)
       .then((data) => {
         setMarathons(data.data);
         setLoading(false);
       })
-  }, [currentPage, itemPerPage])
+  }, [currentPage, itemPerPage, sort])
 
   const numberOfPage = Math.ceil(itemCount / itemPerPage);
   const pages = [...Array(numberOfPage).keys()];
@@ -33,6 +34,10 @@ function AllMarathons() {
   const handelItemParPage = e => {
     setItemPerPage(parseInt(e.target.value))
     setCurrentPage(1)
+  }
+
+  const handelSortClick = () => {
+    setSort('createdAt')
   }
 
   const handelPrevPage = () => {
@@ -52,6 +57,7 @@ function AllMarathons() {
       <Helmet>
         <title>RunRoute | All Marathon</title>
       </Helmet>
+      <div className="text-right"><button onClick={handelSortClick} className="btn btn-accent btn-outline text-xl">Sort</button></div>
       <h1 className="text-3xl md:text-5xl font-semibold text-center mb-16">
         All Marathon's
       </h1>
