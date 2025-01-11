@@ -34,7 +34,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: "/marathons",
-                element: <PrivateRoutes><AllMarathons /></PrivateRoutes>,
+                element: <AllMarathons />,
             },
             {
                 path: "/marathons/:id",

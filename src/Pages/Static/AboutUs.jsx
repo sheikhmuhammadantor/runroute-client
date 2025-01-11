@@ -1,10 +1,11 @@
 import React from 'react';
 import { FaHandshake, FaLightbulb, FaRocket, FaUsers } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
   return (
     <div className="min-h-screen bg-base-100 text-base-content py-12">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto lg:px-8">
         <h1 className="text-3xl font-bold text-center mb-8">About Us</h1>
 
         {/* Mission and Vision Section */}
@@ -57,7 +58,7 @@ const AboutUs = () => {
           <p className="mb-6">
             Become a part of our growing community of runners and organizers. Whether you're hosting a marathon or participating in one, RunRoute is here to support your journey.
           </p>
-          <button className="btn btn-primary">Contact Us</button>
+          <Link to='/contactUs' className="btn btn-primary">Contact Us</Link>
         </div>
       </div>
     </div>

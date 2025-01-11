@@ -25,9 +25,9 @@ function Footer() {
         </nav>
         <nav className=''>
           <h6 className="footer-title">Links</h6>
-          <Link className="link link-hover">About</Link>
-          <Link className="link link-hover">Contact Us</Link>
-          <Link className="link link-hover">Support</Link>
+          <Link to='/aboutUs' className="link link-hover">About</Link>
+          <Link to='/contactUs' className="link link-hover">Contact Us</Link>
+          <Link to='/support' className="link link-hover">Support</Link>
         </nav>
       </footer>
       <section className="footer footer-center bg-base-300 text-base-content p-4">

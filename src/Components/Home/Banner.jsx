@@ -8,7 +8,7 @@ import { Autoplay, Pagination } from 'swiper/modules';
 
 const Banner = () => {
   return (
-    <div>
+    <div className="max-w-[1380px] mx-auto mb-12">
       <h1 className="text-3xl md:text-5xl font-semibold text-center">
         Welcome to RunRoute !
       </h1>
@@ -26,7 +26,7 @@ const Banner = () => {
         modules={[Autoplay, Pagination]}>
         {/* Slide 1 */}
         <SwiperSlide>
-          <div className="text-white text-center h-[70vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
+          <div className="text-white text-center h-[65vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
             style={{ backgroundImage: 'url(https://i.ibb.co.com/d6GQgBn/11.jpg)' }}>
             <div>
               <h2 className="text-4xl font-bold mb-2">Run for Glory</h2>
@@ -37,7 +37,7 @@ const Banner = () => {
 
         {/* Slide 2 */}
         <SwiperSlide>
-          <div className="text-white text-center h-[70vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
+          <div className="text-white text-center h-[65vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
             style={{ backgroundImage: 'url(https://i.ibb.co.com/2MCYtGQ/12.jpg)' }}>
             <div>
               <h2 className="text-4xl font-bold mb-2">Discover Your Strength</h2>
@@ -48,7 +48,7 @@ const Banner = () => {
 
         {/* Slide 3 */}
         <SwiperSlide>
-          <div className="text-white text-center h-[70vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
+          <div className="text-white text-center h-[65vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
             style={{ backgroundImage: 'url(https://i.ibb.co.com/T2mHCRM/13.jpg)' }}>
             <div>
               <h2 className="text-4xl font-bold mb-2">Miles of Inspiration</h2>
@@ -59,7 +59,7 @@ const Banner = () => {
 
         {/* Slide 4 */}
         <SwiperSlide>
-          <div className="text-white text-center h-[70vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
+          <div className="text-white text-center h-[65vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
             style={{ backgroundImage: 'url(https://i.ibb.co.com/4sLvc4t/14.jpg)' }}>
             <div>
               <h2 className="text-4xl font-bold mb-2">Chase Your Dreams</h2>
@@ -69,7 +69,7 @@ const Banner = () => {
         </SwiperSlide>
         {/* Slide 5 */}
         <SwiperSlide>
-          <div className="text-white text-center h-[70vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
+          <div className="text-white text-center h-[65vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
             style={{ backgroundImage: 'url(https://i.ibb.co.com/X8ng4jG/15.jpg)' }}>
             <div>
               <h2 className="text-4xl font-bold mb-2">Every Step Counts</h2>
@@ -79,7 +79,7 @@ const Banner = () => {
         </SwiperSlide>
         {/* Slide 6 */}
         <SwiperSlide>
-          <div className="text-white text-center h-[70vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
+          <div className="text-white text-center h-[65vh] grid place-items-center rounded-2xl bg-center bg-cover bg-no-repeat"
             style={{ backgroundImage: 'url(https://i.ibb.co.com/2t6k0Zn/16.jpg)' }}>
             <div>
               <h2 className="text-4xl font-bold mb-2">Pace Your Passion</h2>

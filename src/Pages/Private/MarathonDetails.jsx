@@ -10,6 +10,7 @@ function MarathonDetails() {
   const [marathon, setMarathon] = useState({});
   const [register, setRegister] = useState(true);
   const axiosInstance = useAxios();
+  console.log(id)
   const { _id, title, registrationStartDate, registrationEndDate, marathonStartDate, location, runningDistance, description, image, createdAt, totalRegistrations } = marathon || {};
 
   const marathonStartCountdown = new Date(marathonStartDate);
@@ -28,6 +29,8 @@ function MarathonDetails() {
       .catch(err => console.log(err.status))
   }, [])
 
+
+  // A challenging trail run through scenic mountain paths and lush forests.
   const resStartDate = new Date(registrationStartDate);
   const resEndDate = new Date(registrationEndDate);
   const currentDate = new Date();
@@ -54,7 +57,7 @@ function MarathonDetails() {
           <MarathonCountdown targetDate={marathonStartCountdown} />
         </div>
       </div>
-      <div className="card card-compact bg-base-100 max-w-[800px] mx-auto my-12 shadow-xl border md:flex-row p-3 sm:p-5">
+      <div className="card card-compact bg-base-100 max-w-[1080px] mx-auto my-12 shadow-xl border md:flex-row p-3 sm:p-5">
         <figure>
           <img className="rounded-xl" src={image} alt={title} />
         </figure>
@@ -67,7 +70,7 @@ function MarathonDetails() {
           <p><b>Reg. Start:</b> {formatDate(registrationStartDate)}</p>
           <p><b>Reg. End:</b> {formatDate(registrationEndDate)}</p>
           <p><b>Marathon Create:</b> {formatDate(createdAt)}</p>
-          <p>{description}</p>
+          <p className="max-w-full md:max-w-96">{description}</p>
           <p className="underline">{location}</p>
           <div>
             <span><b>Total Reg.</b></span>

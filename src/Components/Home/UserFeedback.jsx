@@ -1,6 +1,6 @@
 function UserFeedback() {
   return (
-    <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-evenly text-center gap-y-8 gap-5 my-12 mt-20 bg-base-200 rounded-2xl py-8 max-w-[1380px] mx-auto'>
+    <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-evenly text-center gap-y-8 gap-5 my-12 bg-base-200 rounded-2xl py-8 max-w-[1380px] mx-auto'>
       <div className='lg:col-span-3 md:col-span-2 col-span-1 text-5xl font-semibold mb-4 text-left'>
         <h1 className="text-3xl md:text-5xl font-semibold text-center">
           Here Our Runner Feedback

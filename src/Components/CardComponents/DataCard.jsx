@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function DataCard({ marathon }) {
 
-    const { _id, title, registrationStartDate, registrationEndDate, marathonStartDate, location, runningDistance, description, image } = marathon;
+    const { _id, title, registrationStartDate, location, description, image } = marathon;
 
     function formatDate(dateStr) {
         return new Date(dateStr)
@@ -16,16 +16,11 @@ function DataCard({ marathon }) {
             </figure>
             <div className="card-body ">
                 <h2 className="card-title font-bold">{title}</h2>
-                <div className='flex items-center justify-start gap-3'>
-                    <p className="badge badge-success text-white p-3">{runningDistance}m.</p>
-                    <p><b>On.</b> {formatDate(marathonStartDate)}</p>
-                </div>
-                <p><b>Reg. Start:</b> {formatDate(registrationStartDate)}</p>
-                <p><b>Reg. End:</b> {formatDate(registrationEndDate)}</p>
-                <p>{description}</p>
                 <p className='underline'>{location}</p>
+                <p><b>Reg. Start:</b> {formatDate(registrationStartDate)}</p>
+                <p>{`${description.slice(0, 80)}...`}</p>
                 <div className="card-actions justify-center mt-4">
-                    <Link to={`/marathons/${_id}`} className="btn btn-sm text-lg px-8">See mote</Link>
+                    <Link to={`/marathons/${_id}`} className="btn btn-sm text-lg px-8">Details</Link>
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 function UpcomingMarathons() {
   return (
-    <div className="my-20 max-w-[1380px] mx-auto">
+    <div className="my-12 max-w-[1380px] mx-auto">
       <h1 className="text-3xl md:text-5xl font-semibold text-center mb-16">
         UpComing Marathon's
       </h1>
