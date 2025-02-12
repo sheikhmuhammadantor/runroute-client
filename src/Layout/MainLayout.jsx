@@ -11,7 +11,7 @@ function MainLayout() {
                 <title>RunRoute | Your Partner in Every Marathon Adventure</title>
             </Helmet>
             <Toaster position="bottom-center" reverseOrder={true} />
-            <section className="mt-2">
+            <section className="w-full fixed top-0 z-50 left-1/2 translate-x-[-50%]">
                 <Navbar />
             </section>
             <section className="px-5 mt-32 min-h-[65vh] ">
