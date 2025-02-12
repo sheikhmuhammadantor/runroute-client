@@ -50,7 +50,7 @@ function Navbar() {
 
 
   return (
-    <div className="navbar bg-base-100/95 max-w-[1535px] mx-auto px-6">
+    <div className="navbar bg-base-100/95 max-w-[1380px] mx-auto">
       <div className="flex-1">
         <Link to="/" className=''>
           <h2 className='text-center border border-base-content border-dashed px-4 py-0 rounded-md '>

@@ -57,7 +57,7 @@ function AllMarathons() {
       <Helmet>
         <title>RunRoute | All Marathon</title>
       </Helmet>
-      <div className="text-right"><button onClick={handelSortClick} className="btn btn-accent text-white text-lg px-8">Sort</button></div>
+      <div className="text-right px-8"><button onClick={handelSortClick} className="btn btn-accent text-white text-lg px-8">Sort</button></div>
       <h1 className="text-3xl md:text-5xl font-semibold text-center mb-16">
         All Marathon's
       </h1>
