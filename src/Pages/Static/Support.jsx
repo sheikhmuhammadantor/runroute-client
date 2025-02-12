@@ -44,35 +44,35 @@ const Support = () => {
                     <div className="bg-base-200 p-6 rounded-lg shadow-md mb-6">
                         <h3 className="text-xl font-semibold text-base-content">FAQs</h3>
                         <p className="text-base-content">Visit our FAQ page to find quick answers to common questions.</p>
-                        <Link to="https://wa.me/8801957710483" target="_blank" rel="noopener noreferrer" className="text-indigo-600 font-medium mt-3 inline-block">Learn More</Link>
+                        <Link to="https://wa.me/8801957710483" target="_blank" rel="noopener noreferrer" className="text-teal-500 font-medium mt-3 inline-block">Learn More</Link>
                     </div>
 
                     {/* Live Chat */}
                     <div className="bg-base-200 p-6 rounded-lg shadow-md mb-6">
                         <h3 className="text-xl font-semibold text-base-content">Live Chat</h3>
                         <p className="text-base-content">Chat with one of our support agents in real-time.</p>
-                        <Link to="https://wa.me/8801957710483" target="_blank" rel="noopener noreferrer" className="text-indigo-600 font-medium mt-3 inline-block">Start Chat</Link>
+                        <Link to="https://wa.me/8801957710483" target="_blank" rel="noopener noreferrer" className="text-teal-500 font-medium mt-3 inline-block">Start Chat</Link>
                     </div>
 
                     {/* Email Support */}
                     <div className="bg-base-200 p-6 rounded-lg shadow-md mb-6">
                         <h3 className="text-xl font-semibold text-base-content">Email Support</h3>
                         <p className="text-base-content">Need help? Email our support team and we'll get back to you within 24 hours.</p>
-                        <Link to="mailto:support@fundfusions.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 font-medium mt-3 inline-block">Email Us</Link>
+                        <Link to="mailto:support@fundfusions.com" target="_blank" rel="noopener noreferrer" className="text-teal-500 font-medium mt-3 inline-block">Email Us</Link>
                     </div>
 
                     {/* Community Forum */}
                     <div className="bg-base-200 p-6 rounded-lg shadow-md mb-6">
                         <h3 className="text-xl font-semibold text-base-content">Community Forum</h3>
                         <p className="text-base-content">Join our community forum to get help from other users and share experiences.</p>
-                        <Link to="https://wa.me/8801957710483" target="_blank" rel="noopener noreferrer" className="text-indigo-600 font-medium mt-3 inline-block">Visit Forum</Link>
+                        <Link to="https://wa.me/8801957710483" target="_blank" rel="noopener noreferrer" className="text-teal-500 font-medium mt-3 inline-block">Visit Forum</Link>
                     </div>
 
                     {/* Others */}
                     <div className="bg-base-200 p-6 rounded-lg shadow-md mb-6">
                         <h3 className="text-xl font-semibold text-base-content">Other Options</h3>
                         <p className="text-base-content">Explore additional ways to contact support and get the help you need.</p>
-                        <Link to="https://wa.me/8801957710483" target="_blank" rel="noopener noreferrer" className="text-indigo-600 font-medium mt-3 inline-block">Learn More</Link>
+                        <Link to="https://wa.me/8801957710483" target="_blank" rel="noopener noreferrer" className="text-teal-500 font-medium mt-3 inline-block">Learn More</Link>
                     </div>
                 </div>
 
@@ -83,8 +83,7 @@ const Support = () => {
                         If you want to get support directly or join our support team, click below to get started!
                     </p>
                     <Link to="mailto:support@fundfusions.com"
-                        className="btn btn-primary text-white py-2 px-4 rounded-lg shadow-md hover:bg-primary-focus"
-                    >
+                        className="btn btn-accent text-white">
                         Join Support
                     </Link>
                 </div>

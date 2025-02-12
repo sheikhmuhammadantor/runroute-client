@@ -12,7 +12,7 @@ const AboutUs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="bg-base-200 shadow-lg p-6 rounded-lg">
             <div className="flex items-center mb-4">
-              <FaLightbulb className="text-primary text-2xl mr-3" />
+              <FaLightbulb className="text-teal-500 text-2xl mr-3" />
               <h2 className="text-xl font-semibold">Our Mission</h2>
             </div>
             <p>
@@ -21,7 +21,7 @@ const AboutUs = () => {
           </div>
           <div className="bg-base-200 shadow-lg p-6 rounded-lg">
             <div className="flex items-center mb-4">
-              <FaRocket className="text-primary text-2xl mr-3" />
+              <FaRocket className="text-teal-500 text-2xl mr-3" />
               <h2 className="text-xl font-semibold">Our Vision</h2>
             </div>
             <p>
@@ -34,7 +34,7 @@ const AboutUs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="bg-base-200 shadow-lg p-6 rounded-lg">
             <div className="flex items-center mb-4">
-              <FaUsers className="text-primary text-2xl mr-3" />
+              <FaUsers className="text-teal-500 text-2xl mr-3" />
               <h2 className="text-xl font-semibold">What We Do</h2>
             </div>
             <p>
@@ -43,7 +43,7 @@ const AboutUs = () => {
           </div>
           <div className="bg-base-200 shadow-lg p-6 rounded-lg">
             <div className="flex items-center mb-4">
-              <FaHandshake className="text-primary text-2xl mr-3" />
+              <FaHandshake className="text-teal-500 text-2xl mr-3" />
               <h2 className="text-xl font-semibold">Why Choose Us</h2>
             </div>
             <p>
@@ -58,7 +58,7 @@ const AboutUs = () => {
           <p className="mb-6">
             Become a part of our growing community of runners and organizers. Whether you're hosting a marathon or participating in one, RunRoute is here to support your journey.
           </p>
-          <Link to='/contactUs' className="btn btn-primary">Contact Us</Link>
+          <Link to='/contactUs' className="btn btn-accent text-white">Contact Us</Link>
         </div>
       </div>
     </div>

@@ -19,17 +19,17 @@ const ContactUs = () => {
         {/* Contact Information */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div className="flex flex-col items-center bg-base-200 p-6 rounded-lg shadow-lg">
-            <FaPhone className="text-primary text-3xl mb-4" />
+            <FaPhone className="text-teal-500 text-3xl mb-4" />
             <h2 className="text-xl font-semibold mb-2">Phone</h2>
             <p className="text-center">+1 234 567 890</p>
           </div>
           <div className="flex flex-col items-center bg-base-200 p-6 rounded-lg shadow-lg">
-            <FaEnvelope className="text-primary text-3xl mb-4" />
+            <FaEnvelope className="text-teal-500 text-3xl mb-4" />
             <h2 className="text-xl font-semibold mb-2">Email</h2>
             <p className="text-center">support@runroute.com</p>
           </div>
           <div className="flex flex-col items-center bg-base-200 p-6 rounded-lg shadow-lg">
-            <FaMapMarkerAlt className="text-primary text-3xl mb-4" />
+            <FaMapMarkerAlt className="text-teal-500 text-3xl mb-4" />
             <h2 className="text-xl font-semibold mb-2">Address</h2>
             <p className="text-center">123 Marathon St, Runner City</p>
           </div>
@@ -58,7 +58,7 @@ const ContactUs = () => {
               <textarea placeholder="Enter your message" className="textarea textarea-bordered w-full h-32" required></textarea>
             </div>
             <div className="text-center">
-              <button type="submit" className="btn btn-primary">Send Message</button>
+              <button type="submit" className="btn btn-accent text-white">Send Message</button>
             </div>
           </form>
         </div>
