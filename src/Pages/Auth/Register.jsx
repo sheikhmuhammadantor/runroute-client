@@ -122,12 +122,12 @@ function Register() {
               </span>
             </div>
             <div className="form-control mt-2">
-              <button className="btn btn-primary mb-1 disabled:btn-neutral disabled:opacity-60 disabled:text-gray-500">Register</button>
+              <button className="btn btn-accent text-white mb-1 disabled:btn-neutral disabled:opacity-60 disabled:text-gray-500">Register</button>
               {
                 error && <small className='text-red-500'>{error}</small>
               }
               <p className='mt-2'>Already have an Account ? Place <Link to="/login" className='font-semibold hover:underline'>Log In</Link></p>
-              <button type='button' onClick={handelGoogleLogIn} className="btn my-2 btn-warning">Register With Google</button>
+              <button type='button' onClick={handelGoogleLogIn} className="btn btn-accent text-white text-lg px-8 hidden">Register With Google</button>
             </div>
           </form>
         </div>

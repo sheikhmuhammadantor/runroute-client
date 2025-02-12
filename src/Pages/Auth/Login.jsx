@@ -97,9 +97,9 @@ function Login() {
                             </label>
                         </div>
                         <div className="form-control mt-4">
-                            <button className="btn btn-primary">Log In</button>
+                            <button className="btn btn-accent text-white text-lg px-8">Log In</button>
                             <p className='mt-3'>Create a new Account ? Place <Link to="/register" className='font-semibold hover:underline'>Register</Link></p>
-                            <button type='button' onClick={handelGoogleLogIn} className="btn my-2 btn-warning">Log In With Google</button>
+                            <button type='button' onClick={handelGoogleLogIn} className="btn btn-accent text-white text-lg px-8 hidden">Log In With Google</button>
                         </div>
                     </form>
                 </div>
