@@ -36,7 +36,7 @@ function MyMarathonsList() {
   return (
     <div className="overflow-x-auto">
       <div className="text-right mr-6">
-        <button onClick={handelSortClick} className="btn btn-warning text-black text-xl">Sort</button>
+        <button onClick={handelSortClick} className="btn btn-outline px-8 text-lg">Sort</button>
       </div>
       <Helmet>
         <title>RunRoute | My Marathons</title>

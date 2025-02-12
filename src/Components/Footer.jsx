@@ -17,10 +17,10 @@ function Footer() {
         <nav className=''>
           <h6 className="footer-title">Links</h6>
           <div className="flex gap-3 md:justify-normal justify-center">
-            <Link to='https://github.com/sheikhmuhammadantor' target="_blank" className="text-2xl outline outline-2 hover:outline-indigo-800 cursor-pointer delay-100 rounded-full p-1 hover:text-indigo-700"><FaGithub /></Link>
-            <Link to='https://www.linkedin.com/in/sheikh-muhammad-antor-570765290/' target="_blank" className="text-2xl outline outline-2 hover:outline-indigo-800 cursor-pointer delay-100 rounded-full p-1 hover:text-indigo-700"><FaLinkedin /></Link>
-            <Link to='https://x.com/iamAntorSheikh' target="_blank" className="text-2xl outline outline-2 hover:outline-indigo-800 cursor-pointer delay-100 rounded-full p-1 hover:text-indigo-700"><FaTwitter /></Link>
-            <Link to='https://web.facebook.com/sheikhmuhammadantor' target="_blank" className="text-2xl outline outline-2 hover:outline-indigo-800 cursor-pointer delay-100 rounded-full p-1 hover:text-indigo-700"><FaFacebook /></Link>
+            <Link to='https://github.com/sheikhmuhammadantor' target="_blank" className="text-2xl outline outline-2 hover:outline-teal-500 cursor-pointer delay-100 rounded-full p-1 hover:text-teal-500"><FaGithub /></Link>
+            <Link to='https://www.linkedin.com/in/sheikh-muhammad-antor-570765290/' target="_blank" className="text-2xl outline outline-2 hover:outline-teal-500 cursor-pointer delay-100 rounded-full p-1 hover:text-teal-500"><FaLinkedin /></Link>
+            <Link to='https://x.com/iamAntorSheikh' target="_blank" className="text-2xl outline outline-2 hover:outline-teal-500 cursor-pointer delay-100 rounded-full p-1 hover:text-teal-500"><FaTwitter /></Link>
+            <Link to='https://web.facebook.com/sheikhmuhammadantor' target="_blank" className="text-2xl outline outline-2 hover:outline-teal-500 cursor-pointer delay-100 rounded-full p-1 hover:text-teal-500"><FaFacebook /></Link>
           </div>
         </nav>
         <nav className=''>
