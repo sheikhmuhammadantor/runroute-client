@@ -1,14 +1,10 @@
 import { NavLink, Link } from 'react-router-dom';
 import { useAuth } from '../App';
 import toast from 'react-hot-toast';
-// import { useEffect, useState } from 'react';
-import { RiSunLine } from 'react-icons/ri'
-import { IoIosMoon } from 'react-icons/io'
 
 function Navbar() {
 
   const { user, signOutUser } = useAuth()
-  // const [theme, setTheme] = useState();
 
   const handelSignOut = () => {
     signOutUser()
@@ -19,20 +15,6 @@ function Navbar() {
         console.log(error.message)
       })
   }
-
-  // useEffect(() => {
-  //   const html = document.getElementsByTagName('html')[0];
-  //   html.setAttribute("data-theme", theme);
-  // }, [theme]);
-
-  // const handelChangeTheme = () => {
-  //   if (theme === "dark") {
-  //     setTheme("light");
-  //   }
-  //   if (theme === "light") {
-  //     setTheme("dark");
-  //   }
-  // }
 
   const links = <div className='hidden lg:flex'>
     <li><Link to='/' className="text-lg font-medium underline">Home</Link></li>
@@ -58,11 +40,6 @@ function Navbar() {
             <p className='text-lg'>Route</p>
           </h2>
         </Link>
-        {/* <span onClick={handelChangeTheme} className="btn btn-sm text-2xl hidden md:block ml-2">
-          {
-            (theme === "dark") ? <RiSunLine /> : <IoIosMoon />
-          }
-        </span> */}
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
