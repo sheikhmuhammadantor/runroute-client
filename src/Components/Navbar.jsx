@@ -1,10 +1,32 @@
 import { NavLink, Link } from 'react-router-dom';
 import { useAuth } from '../App';
 import toast from 'react-hot-toast';
+import { useEffect, useState } from 'react';
+import { IoMoonSharp } from 'react-icons/io5';
+import { FaSun } from 'react-icons/fa';
 
 function Navbar() {
 
-  const { user, signOutUser } = useAuth()
+  const { user, signOutUser } = useAuth();
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setTheme(savedTheme);
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    } else {
+      setTheme("dark");
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  }, [theme]);
+
+  const handleThemeChange = () => {
+    const selectedTheme = theme === "light" ? "dark" : "light";
+    setTheme(selectedTheme);
+    localStorage.setItem("theme", selectedTheme);
+    document.documentElement.setAttribute("data-theme", selectedTheme);
+  }
 
   const handelSignOut = () => {
     signOutUser()
@@ -40,6 +62,9 @@ function Navbar() {
             <p className='text-lg'>Route</p>
           </h2>
         </Link>
+        <div className="ml-4" onClick={handleThemeChange}> 
+          {theme === "light" ? <IoMoonSharp className='text-2xl cursor-pointer' /> : <FaSun className='text-2xl cursor-pointer' />}
+        </div>
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
