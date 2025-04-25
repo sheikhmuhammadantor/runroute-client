@@ -8,7 +8,7 @@ function UpcomingMarathons() {
         {/* Card */}
         <div className="card card-compact bg-base-100 max-w-96 shadow-xl border">
           <figure>
-            <img src='https://i.ibb.co.com/B4t26VZ/21.jpg' alt="" />
+            <img src='https://i.ibb.co.com/B4t26VZ/21.jpg' alt="Marathon Photo" />
           </figure>
           <div className="card-body ">
             <h2 className="card-title font-bold">Autumn Leaves Dash</h2>
@@ -22,7 +22,7 @@ function UpcomingMarathons() {
         {/*  */}
         <div className="card card-compact bg-base-100 max-w-96 shadow-xl border">
           <figure>
-            <img src='https://i.ibb.co.com/9Nz5f73/20.jpg' alt="" />
+            <img src='https://i.ibb.co.com/9Nz5f73/20.jpg' alt="Marathon Photo" />
           </figure>
           <div className="card-body ">
             <h2 className="card-title font-bold">Winter Wonderland Run</h2>
@@ -36,7 +36,7 @@ function UpcomingMarathons() {
         {/*  */}
         <div className="card card-compact bg-base-100 max-w-96 shadow-xl border">
           <figure>
-            <img src='https://i.ibb.co.com/8bJFc3K/19.jpg' alt="" />
+            <img src='https://i.ibb.co.com/8bJFc3K/19.jpg' alt="Marathon Photo" />
           </figure>
           <div className="card-body ">
             <h2 className="card-title font-bold">Spring Blossom Race</h2>
@@ -50,7 +50,7 @@ function UpcomingMarathons() {
         {/*  */}
         <div className="card card-compact bg-base-100 max-w-96 shadow-xl border">
           <figure>
-            <img src='https://i.ibb.co.com/5YpFXPn/18.jpg' alt="" />
+            <img src='https://i.ibb.co.com/5YpFXPn/18.jpg' alt="Marathon Photo" />
           </figure>
           <div className="card-body ">
             <h2 className="card-title font-bold">Summer Sun Sprint</h2>
@@ -64,7 +64,7 @@ function UpcomingMarathons() {
         {/*  */}
         <div className="card card-compact bg-base-100 max-w-96 shadow-xl border">
           <figure>
-            <img src='https://i.ibb.co.com/G70z1pm/17.jpg' alt="" />
+            <img src='https://i.ibb.co.com/G70z1pm/17.jpg' alt="Marathon Photo" />
           </figure>
           <div className="card-body ">
             <h2 className="card-title font-bold">Mountain Challenge Marathon</h2>
@@ -78,7 +78,7 @@ function UpcomingMarathons() {
         {/*  */}
         <div className="card card-compact bg-base-100 max-w-96 shadow-xl border">
           <figure>
-            <img src='https://i.ibb.co.com/z2gPyP0/16.jpg' alt="" />
+            <img src='https://i.ibb.co.com/z2gPyP0/16.jpg' alt="Marathon Photo" />
           </figure>
           <div className="card-body ">
             <h2 className="card-title font-bold">City Night Glow Run</h2>

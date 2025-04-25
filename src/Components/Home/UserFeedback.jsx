@@ -8,42 +8,42 @@ function UserFeedback() {
       </div>
       <div>
         <label htmlFor="my-drawer-4" className="drawer-button btn px-1 outline-cyan-500 outline-2 outline outline-offset-1 border-none hover:outline-cyan-400 w-12 h-12 rounded-full overflow-hidden">
-          <img className="max-w-full max-h-full" src='https://i.ibb.co.com/M53MNYR/runner-3.jpg.jpg' alt="" />
+          <img className="max-w-full max-h-full" src='https://i.ibb.co.com/M53MNYR/runner-3.jpg.jpg' alt="Feedback User Photo" />
         </label>
         <h3 data-tooltip-id="my-tooltip" className='w-max mx-auto text-2xl font-semibold my-2'>Mark Stevens</h3>
         <p className='max-w-[78%] mx-auto'>RunRoute gave us an edge in health and technology, they are more like an extended family.</p>
       </div>
       <div>
         <label htmlFor="my-drawer-4" className="drawer-button btn px-1 outline-cyan-500 outline-2 outline outline-offset-1 border-none hover:outline-cyan-400 w-12 h-12 rounded-full overflow-hidden">
-          <img className="max-w-full max-h-full" src='https://i.ibb.co.com/Z6Fk2t6/runner-3.png' alt="" />
+          <img className="max-w-full max-h-full" src='https://i.ibb.co.com/Z6Fk2t6/runner-3.png' alt="Feedback User Photo" />
         </label>
         <h3 data-tooltip-id="my-tooltip" className='w-max mx-auto text-2xl font-semibold my-2'>John Matthews</h3>
         <p className='max-w-[78%] mx-auto'>RunRoute Force Elevate Your Running The Expertise Training</p>
       </div>
       <div>
         <label htmlFor="my-drawer-4" className="drawer-button btn px-1 outline-cyan-500 outline-2 outline outline-offset-1 border-none hover:outline-cyan-400 w-12 h-12 rounded-full overflow-hidden">
-          <img className="max-w-full max-h-full" src='https://i.ibb.co.com/f4GyPjw/runner-1.png' alt="" />
+          <img className="max-w-full max-h-full" src='https://i.ibb.co.com/f4GyPjw/runner-1.png' alt="Feedback User Photo" />
         </label>
         <h3 data-tooltip-id="my-tooltip" className='w-max mx-auto text-2xl font-semibold my-2'>Ravi Handa</h3>
         <p className='max-w-[78%] mx-auto'>RunRoute constantly endeavors to improve their interface and customer experience.</p>
       </div>
       <div>
         <label htmlFor="my-drawer-4" className="drawer-button btn px-1 outline-cyan-500 outline-2 outline outline-offset-1 border-none hover:outline-cyan-400 w-12 h-12 rounded-full overflow-hidden">
-          <img className="max-w-full max-h-full" src='https://i.ibb.co.com/c2PRBRS/runner-2.png' alt="" />
+          <img className="max-w-full max-h-full" src='https://i.ibb.co.com/c2PRBRS/runner-2.png' alt="Feedback User Photo" />
         </label>
         <h3 data-tooltip-id="my-tooltip" className='w-max mx-auto text-2xl font-semibold my-2'>Satish Talim</h3>
         <p className='max-w-[78%] mx-auto'>RunRoute offered me access in a way that just didn’t exist before.</p>
       </div>
       <div>
         <label htmlFor="my-drawer-4" className="drawer-button btn px-1 outline-cyan-500 outline-2 outline outline-offset-1 border-none hover:outline-cyan-400 w-12 h-12 rounded-full overflow-hidden">
-          <img className="max-w-full max-h-full" src='https://i.ibb.co.com/gDYryC0/runner-1.jpg' alt="" />
+          <img className="max-w-full max-h-full" src='https://i.ibb.co.com/gDYryC0/runner-1.jpg' alt="Feedback User Photo" />
         </label>
         <h3 data-tooltip-id="my-tooltip" className='w-max mx-auto text-2xl font-semibold my-2'>Saurov Kakoti</h3>
         <p className='max-w-[78%] mx-auto'>Their careful selection and vetting of sponsors and deals has enabled me to invest with confidence.</p>
       </div>
       <div>
         <label htmlFor="my-drawer-4" className="drawer-button btn px-1 outline-cyan-500 outline-2 outline outline-offset-1 border-none hover:outline-cyan-400 w-12 h-12 rounded-full overflow-hidden">
-          <img className="max-w-full max-h-full" src='https://i.ibb.co.com/44NBB23/runner-2.jpg' alt="" />
+          <img className="max-w-full max-h-full" src='https://i.ibb.co.com/44NBB23/runner-2.jpg' alt="Feedback User Photo" />
         </label>
         <h3 data-tooltip-id="my-tooltip" className='w-max mx-auto text-2xl font-semibold my-2'>M. Asif</h3>
         <p className='max-w-[78%] mx-auto'>I like for Each deal and sponsor are carefully screened before presenting to investors.</p>

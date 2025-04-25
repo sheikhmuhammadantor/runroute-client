@@ -8,7 +8,7 @@ function Footer() {
       <footer className="footer p-10 max-w-[1380px] mx-auto">
         <aside className=''>
           <Link to='/' className="bg-transparent hover:bg-transparent border-none text-xl px-0">
-            <img className='max-h-20 border border-dashed border-base-content rounded-md' src={logo} alt="" />
+            <img className='max-h-20 border border-dashed border-base-content rounded-md' src={logo} alt="Logo" />
           </Link>
           <p className="max-w-xs">
             RunRoute connects runners and organizers for seamless marathon events. Join us to manage, participate, and excel in your marathon journey.
