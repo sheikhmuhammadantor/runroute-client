@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen bg-base-100 text-base-content py-12">
+    <section className="min-h-screen bg-base-100 text-base-content py-12">
       <div className="max-w-7xl mx-auto lg:px-8">
         <h1 className="text-3xl font-bold text-center mb-8">About Us</h1>
 
@@ -61,7 +61,7 @@ const AboutUs = () => {
           <Link to='/contactUs' className="btn btn-accent text-white">Contact Us</Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

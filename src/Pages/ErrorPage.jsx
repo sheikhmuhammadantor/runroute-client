@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 
 function ErrorPage() {
     return (
-        <main class="h-screen w-full flex flex-col justify-center items-center bg-[#1A2238]">
+        <section class="h-screen w-full flex flex-col justify-center items-center bg-[#1A2238]">
             <Helmet>
                 <title>Oops | Error Happen</title>
             </Helmet>
@@ -19,7 +19,7 @@ function ErrorPage() {
                     </span>
                 </Link>
             </button>
-        </main>
+        </section>
     )
 }
 

@@ -29,8 +29,7 @@ function MarathonModal({ handelCloseModal, marathon }) {
 
     const handelAddMarathon = (e) => {
         e.preventDefault();
-        {/* if there is a button in form, it will close the modal 😊 */ }
-
+        
         const newMarathon = {
             registrationStartDate,
             registrationEndDate,

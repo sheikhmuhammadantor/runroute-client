@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Support = () => {
     return (
-        <div className="bg-base-100 py-12 md:px-6">
+        <section className="bg-base-100 py-12 md:px-6">
             <div className="max-w-4xl mx-auto bg-base-200 py-8 px-4 rounded-lg shadow-lg">
                 {/* Title */}
                 <h1 className="text-3xl font-bold text-center text-base-content mb-6">Support</h1>
@@ -95,7 +95,7 @@ const Support = () => {
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
