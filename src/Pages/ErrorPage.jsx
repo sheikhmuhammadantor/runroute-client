@@ -9,7 +9,7 @@ function ErrorPage() {
             </Helmet>
             <h1 class="text-9xl font-extrabold text-white tracking-widest">404</h1>
             <div class="bg-teal-500 px-2 text-sm rounded rotate-12 absolute text-white">
-                Page Not Found
+                Page Not Found !
             </div>
             <button class="mt-5">
                 <Link to="/" class="relative inline-block text-sm font-medium text-teal-500 group active:text-teal-500 focus:outline-none focus:ring">
