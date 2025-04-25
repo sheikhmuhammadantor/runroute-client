@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import { TableData, useAuth, useAxios } from "../../App";
 import { Helmet } from "react-helmet";
+import SkeletonList from "../../Components/UI/SkeletonList";
 
 function MyMarathonsList() {
 
-  const [loading, setLoading] = useState(true);
   const axiosInstance = useAxios();
   const { user: { email } = {} } = useAuth();
   const [marathons, setMarathons] = useState([]);
@@ -13,7 +13,6 @@ function MyMarathonsList() {
     axiosInstance.get(`/marathonByEmail?email=${email}`)
       .then(res => {
         setMarathons(res.data);
-        setLoading(false);
       })
       .catch(err => console.log(err.status))
   }, [])
@@ -27,10 +26,6 @@ function MyMarathonsList() {
       .then((res) => {
         setMarathons([...res.data]);
       })
-  }
-
-  if (loading) {
-    return <div className='text-3xl min-h-[70vh] grid place-items-center'><span className="loading loading-spinner text-info w-20"></span></div>
   }
 
   return (
@@ -54,7 +49,13 @@ function MyMarathonsList() {
           </tr>
         </thead>
         <tbody>
-          {
+          {marathons?.length === 0 ?
+            <tr >
+              <td colSpan={5}>
+                <SkeletonList />
+              </td>
+            </tr>
+            :
             marathons?.map((marathon, idx) => <TableData key={idx} marathon={marathon} idx={idx} setMarathons={setMarathons} handelDelete={handelDeleteMarathon} />)
           }
         </tbody>

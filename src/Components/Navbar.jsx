@@ -38,6 +38,8 @@ function Navbar() {
       })
   }
 
+  const defaultPhoto = 'https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg';
+
   const links = <div className='hidden lg:flex'>
     <li><Link to='/' className="text-lg font-medium underline">Home</Link></li>
     <li><NavLink to="/aboutUs" className="text-lg font-medium underline">About Us</NavLink></li>
@@ -62,7 +64,7 @@ function Navbar() {
             <p className='text-lg'>Route</p>
           </h2>
         </Link>
-        <div className="ml-4" onClick={handleThemeChange}> 
+        <div className="ml-4" onClick={handleThemeChange}>
           {theme === "light" ? <IoMoonSharp className='text-2xl cursor-pointer' /> : <FaSun className='text-2xl cursor-pointer' />}
         </div>
       </div>
@@ -79,7 +81,7 @@ function Navbar() {
             user ?
               <div className="relative group">
                 <label htmlFor="my-drawer-4" className="drawer-button btn px-1 outline-teal-500 outline-2 outline outline-offset-1 border-none hover:outline-cyan-400 w-12 h-12 rounded-full overflow-hidden">
-                  <img className="max-w-full max-h-full" src={user?.photoURL} alt="User Photo" />
+                  <img className="max-w-full max-h-full rounded-full" src={user?.photoURL || defaultPhoto} alt="User Photo" />
                 </label>
                 <div className="absolute top-12 right-0 bg-white shadow-lg border rounded w-60 p-2 hidden group-hover:block z-20">
                   <ul>

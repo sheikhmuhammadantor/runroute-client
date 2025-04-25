@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import { TableData, useAuth, useAxios } from "../../App";
 import { Helmet } from "react-helmet";
+import SkeletonList from "../../Components/UI/SkeletonList";
 
 function MyApplyList() {
 
-  const [loading, setLoading] = useState(true);
   const [applies, setApplies] = useState([]);
   const axiosInstance = useAxios();
   const { user: { email } = {} } = useAuth();
@@ -13,7 +13,6 @@ function MyApplyList() {
     axiosInstance.get(`/appliesByEmail?email=${email}`)
       .then(res => {
         setApplies(res.data);
-        setLoading(false);
       })
       .catch(err => console.log(err.status))
   }, [])
@@ -28,10 +27,6 @@ function MyApplyList() {
       .then(res => {
         setApplies(res.data);
       }).catch(err => console.log(err.status))
-  }
-
-  if (loading) {
-    return <div className='text-3xl min-h-[70vh] grid place-items-center'><span className="loading loading-spinner text-info w-20"></span></div>
   }
 
   return (
@@ -53,7 +48,13 @@ function MyApplyList() {
           </tr>
         </thead>
         <tbody>
-          {
+          {applies?.length === 0 ?
+            <tr >
+              <td colSpan={4}>
+                <SkeletonList />
+              </td>
+            </tr>
+            :
             applies?.map((marathon, idx) => <TableData key={idx} marathon={marathon} idx={idx} setMarathons={setApplies} handelDelete={handelDeleteApply} applies={true} />)
           }
         </tbody>
