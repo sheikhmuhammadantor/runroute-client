@@ -78,7 +78,6 @@ function Registration() {
                 <div className="bg-base-200 w-full shadow-2xl border rounded-2xl py-6">
                     <div className="text-center px-4">
                         <h2 className="text-3xl font-semibold mb-3">Register Marathon</h2>
-                        {/* <p className="">Bring your idea to life! Share your vision, set goals, and inspire others to support you. <br /> Fill in the form below to begin your journey toward making a difference.</p> */}
                     </div>
                     {/* From Start Her - */}
                     <form onSubmit={handelRegisterMarathon} className="card-body ">
